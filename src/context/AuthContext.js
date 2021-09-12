@@ -5,7 +5,6 @@ export const AuthContext = createContext()
 function AuthContextProvider(props) {
     const [currentUser, setCurrentUser] = useState(localStorage.getItem('localUser'))
 
-
     const handleUser = (user) => {
         setCurrentUser(user)
         localStorage.setItem('localUser', user)

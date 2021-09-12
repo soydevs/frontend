@@ -6,11 +6,15 @@
 :root {
   --primary-font: Montserrat;
   --primary-color: #3ACE40;
-  --secondary-color: #a64dff;
 }
 
+[data-theme="light"]{
+  --text-color: black;
+  --secondary-color: #a64dff;
 
-* {
-  margin: 0;
-  box-sizing: border-box;
+}
+
+[data-theme="dark"]{
+  --text-color: white;
+  --secondary-color: #3ACE40;
 }
