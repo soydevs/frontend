@@ -4,6 +4,12 @@ import { Link } from 'react-router-dom'
 import { BsEye, BsEyeSlash } from "react-icons/bs";
 
 import './Login.css'
+import ls_img1 from '../../../assets/svg/ls_img1.svg'
+import ls_img2 from '../../../assets/svg/ls_img2.svg'
+import ls_img3 from '../../../assets/svg/ls_img3.svg'
+import ls_img4 from '../../../assets/svg/ls_img4.svg'
+import ls_img5 from '../../../assets/svg/ls_img5.svg'
+import ls_img6 from '../../../assets/svg/ls_img6.svg'
 
 function Login() {
 
@@ -51,7 +57,7 @@ function Login() {
                             </div>
                             <div className="login__signup__btn">
                                 <button type="submit" className="signup_btn">Login</button>
-                                <p>not yet signed up ?</p>
+                                <h6>not yet signed up ?</h6>
                                 <Link to="/signup"><button className="login_btn">Signup</button></Link>
                             </div>
                         </form>
@@ -62,19 +68,21 @@ function Login() {
                         <h1>Welcome Back, User</h1>
                     </div>
                     <div className="lsc__right_sphere">
-                        {/* <div class="spin-container">
-                            <div class="circle outer">
-                                <div class="circle middle">
-                                    <img src="https://cdn1.iconfinder.com/data/icons/landmarks-and-monuments/96/india_historical_landmark_world_monument_arabic-512.png" alt=""  />
-                                    <img src="https://www.flaticon.com/premium-icon/icons/svg/1821/1821160.svg" alt="" />
-                                    <img src="https://cdn.iconscout.com/wordpress/2017/04/gatewayofindia-gate-way-india-mumbai-heritage-sites-india.png" alt="" />
-                                    <img src="https://cdn.iconscout.com/icon/free/png-256/chennai-1-119692.png" alt="" />
-                                    <img src="https://cdn.iconscout.com/icon/free/png-512/hawamahal-1-119697.png" alt=""  />
-                                    <img src="https://cdn3.iconfinder.com/data/icons/chinese-new-year-2042/32/paifang_chinese_temple_monument-512.png" alt="" />
-                                    <div class="circle inner" />
+                        <div className="lsc__right_sphere">
+                            <div className="spin-container">
+                                <div className="circle outer">
+                                    <div className="circle middle">
+                                        <img className="ls__img ls_img1" src={ls_img1} alt=""  />
+                                        <img className="ls__img ls_img2" src={ls_img2} alt="" />
+                                        <img className="ls__img ls_img3" src={ls_img3} alt="" />
+                                        <img className="ls__img ls_img4" src={ls_img4} alt="" />
+                                        <img className="ls__img ls_img5" src={ls_img5} alt=""  />
+                                        <img className="ls__img ls_img6" src={ls_img6} alt="" />
+                                        <div className="circle inner" />
+                                    </div>
                                 </div>
                             </div>
-                        </div> */}
+                        </div>
                     </div>
                 </div>
             </div>

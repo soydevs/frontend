@@ -5,17 +5,20 @@
 /* VARIABLES */
 
 :root {
-  --primary-font: 'Montserrat', sans-serif;;
+  --primary-font: 'Montserrat', sans-serif;
   --primary-color: #3ACE40;
 }
 
 [data-theme="light"]{
-  --text-color: black;
-  --secondary-color: #a64dff;
-
+  --blue: #31A0DE;
+  --bg: #ECF4F8;
+  --bg-invert: #2F2F2F;
+  --input-shadow: inset 3px 3px 6px rgba(255, 255, 255, 0.85), inset -3px -3px 6px rgba(0, 0, 0, 0.2);
 }
 
 [data-theme="dark"]{
-  --text-color: white;
-  --secondary-color: #3ACE40;
+  --blue: #B1E0FA;
+  --bg: #2F2F2F;
+  --bg-invert: #ECF4F8;
+  --input-shadow: inset 3px 3px 6px rgba(255, 255, 255, 0.20), inset -3px -3px 6px rgba(0, 0, 0, 0.50);
 }

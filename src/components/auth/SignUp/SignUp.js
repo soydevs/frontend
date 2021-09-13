@@ -62,7 +62,7 @@ function SignUp() {
                             </div>
                             <div className="login__signup__btn">
                                 <button type="submit" className="signup_btn">Sign Up</button>
-                                <p>already signed up ?</p>
+                                <h6>already signed up ?</h6>
                                 <Link to="/login"><button className="login_btn">Log in</button></Link>
                             </div>
                         </form>
@@ -73,19 +73,19 @@ function SignUp() {
                         <h1>Your journey begins here...</h1>
                     </div>
                     <div className="lsc__right_sphere">
-                        {/* <div class="spin-container">
-                            <div class="circle outer">
-                                <div class="circle middle">
-                                    <img src="https://cdn1.iconfinder.com/data/icons/landmarks-and-monuments/96/india_historical_landmark_world_monument_arabic-512.png" alt=""  />
-                                    <img src="https://www.flaticon.com/premium-icon/icons/svg/1821/1821160.svg" alt="" />
-                                    <img src="https://cdn.iconscout.com/wordpress/2017/04/gatewayofindia-gate-way-india-mumbai-heritage-sites-india.png" alt="" />
-                                    <img src="https://cdn.iconscout.com/icon/free/png-256/chennai-1-119692.png" alt="" />
-                                    <img src="https://cdn.iconscout.com/icon/free/png-512/hawamahal-1-119697.png" alt=""  />
-                                    <img src="https://cdn3.iconfinder.com/data/icons/chinese-new-year-2042/32/paifang_chinese_temple_monument-512.png" alt="" />
-                                    <div class="circle inner" />
+                        <div className="spin-container">
+                            <div className="circle outer">
+                                <div className="circle middle">
+                                    <img className="ls__img ls_img1" src="https://cdn1.iconfinder.com/data/icons/landmarks-and-monuments/96/india_historical_landmark_world_monument_arabic-512.png" alt=""  />
+                                    <img className="ls__img ls_img2" src="https://www.flaticon.com/premium-icon/icons/svg/1821/1821160.svg" alt="" />
+                                    <img className="ls__img ls_img3" src="https://cdn.iconscout.com/wordpress/2017/04/gatewayofindia-gate-way-india-mumbai-heritage-sites-india.png" alt="" />
+                                    <img className="ls__img ls_img4" src="https://cdn.iconscout.com/icon/free/png-256/chennai-1-119692.png" alt="" />
+                                    <img className="ls__img ls_img5" src="https://cdn.iconscout.com/icon/free/png-512/hawamahal-1-119697.png" alt=""  />
+                                    <img className="ls__img ls_img6" src="https://cdn3.iconfinder.com/data/icons/chinese-new-year-2042/32/paifang_chinese_temple_monument-512.png" alt="" />
+                                    <div className="circle inner" />
                                 </div>
                             </div>
-                        </div> */}
+                        </div>
                     </div>
                 </div>
             </div>

@@ -1,6 +1,6 @@
 .signUp {
     min-height: 100vh;
-    background: #ECF4F8;
+    background: var(--bg);
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -33,7 +33,7 @@
     height: 300px;
     transform: translate(-35%, -35%);
     border-radius: 50%;
-    background: #31A0DE;
+    background: var(--blue);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -44,7 +44,7 @@
     font-style: normal;
     font-weight: bold;
     font-size: 35px;
-    color: #EEEEEE;
+    color: var(--bg);
     transform: translate(30%, 60%);
 }
 
@@ -80,19 +80,19 @@
     font-weight: 600;
     font-size: 14px;
     margin-bottom: 0.5rem;
-    color: #555555;
+    color: var(--bg-invert);
 }
 
 .ls_input {
-    background: #ECF4F8;
-    box-shadow: inset 3px 3px 6px rgba(255, 255, 255, 0.85), inset -3px -3px 6px rgba(0, 0, 0, 0.15);
+    background: var(--bg);
+    box-shadow: var(--input-shadow);
     border-radius: 50px;
     border: none;
     outline: none;
     width: 300px;
     height: 40px;
     font-family: var(--primary-font);
-    color: #555555;
+    color: var(--bg-invert);
     font-weight: 500;
     padding: 1rem;
 }
@@ -104,7 +104,8 @@
   transform: translateY(-50%);
   cursor: pointer;
   font-size: 1.25rem;
-  color: rgba(85, 85, 85, 0.7);
+  color: var(--bg-invert);
+  opacity: 0.8;
 }
 
 
@@ -131,24 +132,44 @@
 }
 
 .signup_btn {
-    background: #31A0DE;
+    background: var(--blue);
     color: #EEEEEE;
     border: none;
 }
 
 .login_btn {
     background: #ECF4F8;
-    color: #31A0DE;
-    border: 3px solid #31A0DE;
+    color: var(--blue);
+    border: 3px solid var(--blue);
 }
 
-.login__signup__btn p {
+.login__signup__btn h6 {
     font-family: var(--primary-font);
     font-style: normal;
     font-weight: 500;
     font-size: 12px;  
-    color: rgba(49, 160, 222, 0.7);
+    color: var(--blue);
+    background-color: var(--bg);
+    padding: 0 0.36rem;
+    box-sizing: content-box;
+    width: 100%;
+    text-align: center;
+    position: relative;
+    /* z-index: 9; */
 }
+
+.login__signup__btn h6::after {
+    content: '';
+    position: absolute;
+    z-index: 0;
+    width: 200%;
+    background-color: var(--blue);
+    height: 3px;
+    border-radius: 5px;
+    top: 50%;
+    left: -50%;
+}
+
 
 .lsc__right {
     flex: 0.6;
@@ -167,7 +188,7 @@
     display: flex;
     align-items: flex-end;
     text-align: center;
-    color: #31A0DE;
+    color: var(--blue);
     width: 40%;
     padding: 2rem 3rem 0 0;
 }
@@ -175,15 +196,15 @@
 
 .spin-container{
     position: absolute;
-    top: 70%;
-    left: 70%;
-    --scale: 1.8;
+    top: 80%;
+    left: 40%;
+    --scale: 2.5;
     display: inline-block;
-    animation: spin 60s linear infinite both; 
-  }
-  .spin-container:hover{
+    animation: spin 40s linear infinite both; 
+}
+.spin-container:hover{
     animation-play-state: paused;
-  }
+}
   @keyframes spin{
     0%{
       transform: scale(var(--scale)) rotate(0deg);
@@ -203,32 +224,71 @@
   }
   .circle.outer{
     --size: 500px;
-    --bg: #FDEFED;
+    background: #FDEFED;
   }
   .circle.middle{
     position: relative;
     --size: 400px;
-    --bg: #FAC2BC;
+    background: #FAC2BC;
     
   }
   .circle.inner{
     --size: 300px;
-    --bg: #F1978C;
-    z-index:2;
+    z-index: 2;
+    background: rgb(255,231,227);
+    background: radial-gradient(circle, rgba(255,231,227,1) 25%, rgba(241,151,140,1) 100%);
     
   }
-  
-  .middle img{
-    position: absolute;
-    transform: rotate(var(--angle)) translateY(var(--y));
-    transition: transform 0.3s;
-  }
-  
-  .middle img:hover{
-    transform: rotate(var(--angle)) translateY(calc(var(--y) - 20px)) scale(1.1);
-  }
 
-img {
-    width: 120px;
-    z-index: 9;
+.ls__img {
+    --angle: 0deg;
+    --y: -180px;
+    position: absolute;
+    transition: transform 0.3s;
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+}
+  
+.ls__img:hover{
+    transform: rotate(var(--angle)) translateY(calc(var(--y) - 20px)) scale(1.1);
+}
+
+
+
+.ls_img1 {
+    --angle: 0deg;
+    transform: rotate(var(--angle)) translateY(var(--y));
+    width: 100px;
+}
+
+.ls_img2 {
+    --angle: 60deg;
+    transform: rotate(var(--angle)) translateY(var(--y));
+    width: 100px;
+}
+
+.ls_img3 {
+    --angle: 120deg;
+    transform: rotate(var(--angle)) translateY(var(--y));
+    width: 100px;
+}
+
+.ls_img4 {
+    --angle: 180deg;
+    transform: rotate(var(--angle)) translateY(var(--y));
+    width: 100px;
+}
+
+.ls_img5 {
+    --angle: 240deg;
+    transform: rotate(var(--angle)) translateY(var(--y));
+    width: 100px;
+}
+
+.ls_img6 {
+    --angle: 300deg;
+    transform: rotate(var(--angle)) translateY(var(--y));
+    width: 100px;
 }
