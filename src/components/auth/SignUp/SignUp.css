@@ -1,10 +1,12 @@
 .signUp {
-    min-height: 100vh;
+    height: 100vh;
     background: var(--bg);
     overflow: hidden;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    overflow: hidden;
+    position: relative;
 }
 
 .login__signup__container {
@@ -37,6 +39,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 5;
 }
 
 .lsc__left__header h1 {
@@ -148,27 +151,38 @@
     font-style: normal;
     font-weight: 500;
     font-size: 12px;  
-    color: var(--blue);
-    background-color: var(--bg);
-    padding: 0 0.36rem;
     box-sizing: content-box;
     width: 100%;
     text-align: center;
     position: relative;
-    /* z-index: 9; */
+    padding: 5px 10px;
+    color: var(--blue);
 }
 
-.login__signup__btn h6::after {
+.login__signup__btn h6::before{
     content: '';
     position: absolute;
-    z-index: 0;
-    width: 200%;
-    background-color: var(--blue);
-    height: 3px;
-    border-radius: 5px;
     top: 50%;
     left: -50%;
+    transform: translateY(-50%);
+    height: 2px;
+    border-radius: 3px;
+    width: 50%;
+    background: var(--blue);
 }
+
+.login__signup__btn h6::after{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    transform: translateY(-50%);
+    height: 2px;
+    border-radius: 3px;
+    width: 50%;
+    background: var(--blue);
+}
+
 
 
 .lsc__right {
@@ -209,12 +223,14 @@
     .lsc__left {
         flex: 1;
         min-height: 100vh;
+        justify-content: flex-end;
     }
+
     .lsc__left__header {
         left: initial;
         width: 400px;
         height: 400px;
-        transform: translate(0, -70%);
+        transform: translate(0, -75%);
         align-items: flex-end;
     }
     .lsc__left__header h1 {
@@ -222,7 +238,20 @@
         transform: translate(0%, -100%);
     }
 
+    .lsc__left__form {
+        z-index: 1;
+    }
+
+    .ls_input {
+        background: transparent;
+    }
+
     .lsc__right {
+        position: static;
+        flex: 0;
+    }
+
+    .lsc__right__header {
         display: none;
     }
 }
@@ -231,7 +260,7 @@
     .lsc__left__header {
         width: 350px;
         height: 350px;
-        transform: translate(0, -70%);
+        transform: translate(0, -75%);
     }
     .lsc__left__header h1 {
         font-size: 2.05rem;
@@ -240,10 +269,13 @@
 }
 
 @media screen and (max-width: 400px) {
+    .signUp {
+        height: 124vh;
+    }
     .lsc__left__header {
         width: 300px;
         height: 300px;
-        transform: translate(0, -75%);
+        transform: translate(0, -104%);
     }
     .lsc__left__header h1 {
         font-size: 1.7rem;
@@ -253,10 +285,14 @@
     .ls_input {
         width: 270px;
     }
+
 }
   
 @media only screen and (min-device-width: 320px) and (max-device-width: 
   480px) and (-webkit-device-pixel-ratio: 2) and (device-aspect-ratio: 2/3) {
+    .signUp {
+        height: 124vh;
+    }
     .lsc__left__header {
         width: 300px;
         height: 300px;

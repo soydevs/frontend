@@ -13,12 +13,12 @@ function Globe() {
         <div className="spin-container">
             <div className="circle outer">
                 <div className="circle middle">
-                    <img className="ls__img ls_img1" src={ls_img1} alt=""  />
-                    <img className="ls__img ls_img2" src={ls_img2} alt="" />
-                    <img className="ls__img ls_img3" src={ls_img3} alt="" />
-                    <img className="ls__img ls_img4" src={ls_img4} alt="" />
-                    <img className="ls__img ls_img5" src={ls_img5} alt=""  />
-                    <img className="ls__img ls_img6" src={ls_img6} alt="" />
+                    <img className="ls__img ls_img1 noselect" src={ls_img1} alt=""  />
+                    <img className="ls__img ls_img2 noselect" src={ls_img2} alt="" />
+                    <img className="ls__img ls_img3 noselect" src={ls_img3} alt="" />
+                    <img className="ls__img ls_img4 noselect" src={ls_img4} alt="" />
+                    <img className="ls__img ls_img5 noselect" src={ls_img5} alt=""  />
+                    <img className="ls__img ls_img6 noselect" src={ls_img6} alt="" />
                     <div className="circle inner" />
                 </div>
             </div>

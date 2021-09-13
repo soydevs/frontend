@@ -36,7 +36,7 @@ function Login() {
                     <div className="lsc__left__header">
                         <h1>Login</h1>
                     </div>
-                    <div className="lsc__left__form">
+                    <div className="lsc__left__form login__transform">
                         <form className="login__signup__form" onSubmit={handleSignUp}>
                             <div className="ls_input_div">
                                 <label>Username</label>

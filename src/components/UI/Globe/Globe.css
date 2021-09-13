@@ -6,9 +6,7 @@
     display: inline-block;
     animation: spin 40s linear infinite both; 
 }
-.spin-container:hover{
-    animation-play-state: paused;
-}
+
   @keyframes spin{
     0%{
       transform: scale(var(--scale)) rotate(0deg);
@@ -45,6 +43,16 @@
     
 }
 
+.noselect {
+    -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+       -khtml-user-select: none; /* Konqueror HTML */
+         -moz-user-select: none; /* Old versions of Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+              user-select: none; /* Non-prefixed version, currently
+                                    supported by Chrome, Edge, Opera and Firefox */
+  }
+
 .ls__img {
     --angle: 0deg;
     --y: -180px;
@@ -56,19 +64,19 @@
     -o-user-drag: none;
 }
   
-.ls__img:hover{
-    transform: rotate(var(--angle)) translateY(calc(var(--y) - 20px)) scale(1.1);
-}
+
 
 
 
 .ls_img1 {
     --angle: 0deg;
+    --y: -170px;
     transform: rotate(var(--angle)) translateY(var(--y));
     width: 100px;
 }
 
 .ls_img2 {
+    --y: -175px;
     --angle: 60deg;
     transform: rotate(var(--angle)) translateY(var(--y));
     width: 100px;
@@ -99,30 +107,67 @@
 }
 
 
-
+@media (min-width: 992px) {
+    .spin-container:hover{
+        animation-play-state: paused;
+    }
+    .ls__img:hover{
+        transform: rotate(var(--angle)) translateY(calc(var(--y) - 20px)) scale(1.1);
+    }
+}
 
 @media (min-width: 992px) and (max-width: 1380px) {
-
-    .circle {
-        width: var(--size);
-        height: var(--size);
-    }
-    .circle.outer{
-        --size: 400px;
-    }
-    .circle.middle{
-        --size: 300px;
-        
-    }
-    .circle.inner{
-        --size: 200px;
+    .spin-container{
+        --scale: 2;
     }
 }
 
 
 
 @media screen and (max-width: 800px) {
+    .spin-container{
+        position: absolute;
+        top: 35%;
+        left: 50%;
+        --scale: 2;
+        display: inline-block;
+        animation: spin 40s linear infinite both; 
+        z-index: 0;
+    }
+      @keyframes spin{
+        0%{
+          transform: translateX(-50%) scale(var(--scale)) rotate(0deg);
+        }
+        100%{
+          transform: translateX(-50%) scale(var(--scale)) rotate(360deg);
+        }
+    }
 
+    .ls_img1 {
+        width: 80px;
+    }
+    
+    .ls_img2 {
+        width: 80px;
+    }
+    
+    .ls_img3 {
+        width: 80px;
+    }
+    
+    .ls_img4 {
+        width: 80px;
+    }
+    
+    .ls_img5 {
+        width: 80px;
+    }
+    
+    .ls_img6 {
+        width: 80px;
+    }
+    
+    
 }
 
 @media screen and (max-width: 600px) {
