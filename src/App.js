@@ -9,10 +9,10 @@ import { FourNotFour, HomePage } from './pages'
 
 function App() {
 
-  const { theme, handleThemeToggle } = useContext(ThemeContext)
+  const { theme } = useContext(ThemeContext)
 
     return (
-      <div className="app" data-theme={theme} onClick={handleThemeToggle}>
+      <div className="app" data-theme={theme}>
         <Router>
           <Switch>
             <Route path='/login' component={Login} exact/>
