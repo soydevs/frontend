@@ -133,12 +133,12 @@
 
 .signup_btn {
     background: var(--blue);
-    color: #EEEEEE;
+    color: var(--bg);
     border: none;
 }
 
 .login_btn {
-    background: #ECF4F8;
+    background: var(--bg);
     color: var(--blue);
     border: 3px solid var(--blue);
 }

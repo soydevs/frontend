@@ -1,6 +1,6 @@
 .login {
     min-height: 100vh;
-    background: #ECF4F8;
+    background: var(--bg);
     overflow: hidden;
     display: flex;
     flex-direction: column;
