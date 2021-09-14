@@ -5,15 +5,22 @@ import { HiPencil, HiOutlineUserCircle, HiOutlineCake, HiOutlinePhone, HiOutline
 import './Profile.css'
 import { AuthContext } from '../../../context/AuthContext'
 
+export interface User {
+    name: string,
+    phone: string,
+    birthdate?: string,
+    email?: string,
+    location?: string,
+}
 function Profile() {
 
-    const [name, setName] = useState('Jane Doe')
-    const [phone, setPhone] = useState('1234569870')
-    const [location, setLocation] = useState('Kochi')
-    const [email, setEmail] = useState('kanedoe@gmail.com')
-    const [birthdate, setBirthdate] = useState('07-09-2001')
+    const [name, setName] = useState('')
+    const [phone, setPhone] = useState('')
+    const [location, setLocation] = useState('')
+    const [email, setEmail] = useState('')
+    const [birthdate, setBirthdate] = useState('')
 
-    const [user, setUser] = useState()
+    const [user, setUser] = useState<User>({name: '', phone: '', email: ''})
     const { token} = useContext(AuthContext);
 
     console.log(token)
@@ -25,13 +32,14 @@ function Profile() {
 
             console.log(res.data)
             setUser(res.data)
-            setName(user.name)
+            setName(user.name && user.name)
             setPhone(user.phone)
-            setEmail(user.email)
+            setEmail(user.email && user.email)
         } catch (error) {
             console.log(error)
         }
     }
+
 
 
     useEffect(() => {

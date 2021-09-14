@@ -27,7 +27,7 @@ function Login() {
         setHidden(!hidden)
     }
 
-    const handleSignUp = async (e) => {
+    const handleSignUp = async (e: any) => {
         e.preventDefault()
         const URL = process.env.REACT_APP_BASE_URL + '/auth/login';
         const data = {
@@ -59,6 +59,8 @@ function Login() {
             alert('Enter all the fields')
         }
     }
+
+    console.log(errorMsg)
 
 
     return (

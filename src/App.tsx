@@ -3,9 +3,10 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import { ThemeContext } from './context/ThemeContext';
 import './App.css';
-// import PrivateRoute from './utils/PrivateRoute'
+import PrivateRoute from './utils/PrivateRoute'
 import { Login, SignUp } from './components';
 import { FourNotFour, HomePage, ProfilePage, LandingPage } from './pages'
+
 
 function App() {
 
@@ -19,7 +20,7 @@ function App() {
             <Route path='/signup' component={SignUp} exact/>
             <Route path='/' component={LandingPage} exact/>
             <Route path='/home' component={HomePage} exact/>
-            <Route path='/profile' exact component={ProfilePage}/>
+            <PrivateRoute path='/profile' exact component={ProfilePage}/>
             <Route component={FourNotFour} />
           </Switch>
         </Router>
