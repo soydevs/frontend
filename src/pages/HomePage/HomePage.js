@@ -1,10 +1,12 @@
 import React from 'react'
 
+import { MainLayout } from '../../components'
+
 function HomePage() {
     return (
-        <div>
+        <MainLayout>
             <h1>SoyDevs</h1>
-        </div>
+        </MainLayout>
     )
 }
 

@@ -1,3 +1,111 @@
 .profile {
-    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.profile__header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile__header__info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--primary-font);
+    font-style: normal;
+}
+
+.profile__header__info h1 {
+    color: var(--blue);
+    font-weight: bold;
+    font-size: 3rem;
+    text-align: center;
+    line-height: 90%;
+    margin-top: 0.5rem;
+}
+.profile__header__info p {
+    font-weight: 600;
+    font-size: 1.12rem;
+    text-align: center;
+    color: rgba(63, 63, 63, 0.7);
+}
+
+.phi_img {
+    position: relative;
+}
+
+.phi_img img {
+    width: 212px;
+    height: 212px;
+    border-radius: 50%;
+}
+
+.profile__body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 55%;
+    margin-top: 3rem;
+}
+
+.profile_body_details {
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    padding: 0.5rem;
+    width: 100%;
+    gap: 1rem;
+}
+
+.profile_body_details label {
+    width: 20%;
+    font-family: var(--primary-font);
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 30px;
+    color: #555555;
+}
+
+.profile_input_container {
+    width: 75%;
+    position: relative;
+}
+
+.profile__input_icon {
+    position: absolute;
+    top: 5px;
+    left: 0.4rem;
+    color: var(--blue);
+    font-size: 1.80rem;
+}
+
+.edit__profile {
+    width: 5%;
+    font-size: 1.225rem;
+    color: var(--blue);
+    cursor: pointer;
+}
+
+.profile_input {
+    outline: none;
+    height: 40px;
+    width: 100%;
+    padding: 0.5rem;
+    padding-left: 2.5rem;
+    border: 3px solid #84CAF2;
+    box-sizing: border-box;
+    border-radius: 7px;
+    font-family: var(--primary-font);
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    color: rgba(85, 85, 85, 0.7);
 }

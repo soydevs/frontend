@@ -1,0 +1,22 @@
+.landing {
+    height: calc(100vh - 90px);
+    background-color: #FAFAFA;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.landing {
+    font-family: var(--primary-font);
+    font-style: normal;
+    font-weight: bold;
+    font-size: 2.2rem;
+    line-height: 75px;
+    text-align: start;
+    color: #555555;
+    width: 50%;
+}
+
+.blue__span {
+    color: var(--blue);
+}
