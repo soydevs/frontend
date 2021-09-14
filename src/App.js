@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import { ThemeContext } from './context/ThemeContext';
 import './App.css';
-import PrivateRoute from './utils/PrivateRoute'
+// import PrivateRoute from './utils/PrivateRoute'
 import { Login, SignUp } from './components';
 import { FourNotFour, HomePage, ProfilePage, LandingPage } from './pages'
 
