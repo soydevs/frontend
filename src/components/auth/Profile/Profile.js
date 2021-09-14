@@ -1,7 +1,9 @@
-import React, { useState } from 'react'
+import axios from 'axios';
+import React, { useState, useEffect, useContext } from 'react'
 
 import { HiPencil, HiOutlineUserCircle, HiOutlineCake, HiOutlinePhone, HiOutlineMail, HiOutlineLocationMarker } from "react-icons/hi";
 import './Profile.css'
+import { AuthContext } from '../../../context/AuthContext'
 
 function Profile() {
 
@@ -10,6 +12,32 @@ function Profile() {
     const [location, setLocation] = useState('Kochi')
     const [email, setEmail] = useState('kanedoe@gmail.com')
     const [birthdate, setBirthdate] = useState('07-09-2001')
+
+    const [user, setUser] = useState()
+    const { token} = useContext(AuthContext);
+
+    console.log(token)
+
+    const fetchData = async () => {
+        const URL = process.env.REACT_APP_BASE_URL + '/users';
+        try {// eslint-disable-next-line
+            const res = await axios.get(URL,  {headers: { 'Authorization': `Bearer ${token}` }})
+
+            console.log(res.data)
+            setUser(res.data)
+            setName(user.name)
+            setPhone(user.phone)
+            setEmail(user.email)
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
+
+    useEffect(() => {
+        fetchData()
+
+    }, [])
 
 
     return (

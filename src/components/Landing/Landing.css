@@ -1,22 +1,121 @@
 .landing {
-    height: calc(100vh - 90px);
+    min-height: calc(100vh - 90px);
     background-color: #FAFAFA;
     padding: 3rem;
     display: flex;
     flex-direction: column;
 }
 
-.landing {
+.landing h1 {
     font-family: var(--primary-font);
     font-style: normal;
     font-weight: bold;
-    font-size: 2.2rem;
-    line-height: 75px;
+    font-size: 3.6rem;
     text-align: start;
     color: #555555;
     width: 50%;
+    line-height: 112%;
 }
 
 .blue__span {
     color: var(--blue);
+}
+
+.landing__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.train__container {
+    width: 100%;
+    position: relative;
+}
+
+.train__container img {
+    object-fit: cover;
+    max-width:100%;
+    max-height:100%;
+}
+
+.landing_input_div {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    top: 20%;
+}
+
+.landing_input {
+    outline: none;
+    border: none;
+    box-sizing: border-box;
+    background: #FFFFFF;
+    box-shadow: -3px -3px 6px rgba(49, 160, 222, 0.2), 3px 3px 6px rgba(0, 0, 0, 0.15);
+    border-radius: 40px;
+    font-family: var(--primary-font);
+    font-style: normal;
+    font-weight: 600;
+    height: 45px;
+    width: 50%;
+    font-size: 16px;
+    padding: 0.5rem;
+    padding-left: 2rem;
+    color: rgba(49, 160, 222, 0.8);
+    margin: auto;
+}
+
+.landing_input::placeholder {
+    color: rgba(49, 160, 222, 0.6);
+    opacity: 1; 
+}
+  
+.landing_input:-ms-input-placeholder {
+    color: rgba(49, 160, 222, 0.6);
+}
+  
+.landing_input::-ms-input-placeholder { 
+    color: rgba(49, 160, 222, 0.6);
+}
+
+
+
+
+@media (min-width: 992px) and (max-width: 1380px) {
+    .landing h1 {
+        font-size: 3.2rem;
+    }
+}
+
+
+@media screen and (max-width: 992px) {
+    .landing h1 {
+        font-size: 2.2rem;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .landing h1 {
+        font-size: 2rem;
+    }
+}
+
+@media screen and (max-width: 600px) {
+
+}
+
+@media screen and (max-width: 400px) {
+
+}
+  
+@media only screen and (min-device-width: 320px) and (max-device-width: 
+  480px) and (-webkit-device-pixel-ratio: 2) and (device-aspect-ratio: 2/3) {
+
+}
+
+
+@media only screen and (device-width: 768px) {
+
 }

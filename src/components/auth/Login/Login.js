@@ -1,27 +1,59 @@
-import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import React, { useState, useContext } from 'react'
+import { Link, useHistory } from 'react-router-dom'
+import axios from 'axios'
 
 import { BsEye, BsEyeSlash } from "react-icons/bs";
-
+import { AuthContext } from '../../../context/AuthContext'
 import './Login.css'
 import Globe from '../../UI/Globe/Globe';
 
 
 function Login() {
-
+    const [errorMsg, setErrorMsg] = useState('')
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
 
     const [hidden, setHidden] = useState(true)
 
+    const { handleUser, handleToken, currentUser } = useContext(AuthContext);
+    const history = useHistory()
+
+    if (currentUser) {
+        history.push('/')
+        window.location.reload()
+    }
+
     const togglePassView = () => {
         setHidden(!hidden)
     }
 
-    const handleSignUp = (e) => {
+    const handleSignUp = async (e) => {
         e.preventDefault()
+        const URL = process.env.REACT_APP_BASE_URL + '/auth/login';
+        const data = {
+            username,
+            password
+        }
         if(username && password) {
-            console.log(username)
+            setErrorMsg('')
+            console.log(data)
+            try {// eslint-disable-next-line
+                const res = await axios.post(URL, data)
+                if(res.data.success) {
+                    await handleToken(res.data.token)
+                    await handleUser(res.data.username)
+                    history.push('/')
+                } else {
+                    setErrorMsg('Invalid credentials')
+                }
+                console.log(res)
+
+                console.log(res.data.message)
+            } catch (error) {
+                console.log(error)
+                setErrorMsg('Signin failed!')
+                setTimeout(() => { setErrorMsg('') }, 4000)
+            }
         }
         else {
             alert('Enter all the fields')

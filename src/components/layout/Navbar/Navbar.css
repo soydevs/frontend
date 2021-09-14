@@ -3,10 +3,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    position: sticky;
-    top: 0;
     width: 100%;
-    z-index: 3;
     background-color: #FAFAFA;
 }
 
@@ -63,4 +60,86 @@
     color: var(--blue);
     border: 3px solid var(--blue);
     background: none;
+}
+
+.nav__mob {
+    display: none;
+}
+
+
+.nav__open {
+    color: var(--blue);
+    cursor: pointer;
+    font-size: 1.75rem;
+    box-sizing: content-box;
+    padding: 0.35rem;
+    background: #F3F5F7;
+    box-shadow: -1.875px -1.875px 3.75px rgba(255, 255, 255, 0.85), 1.875px 1.875px 3.75px rgba(0, 0, 0, 0.15);
+    border-radius: 21.875px;
+}
+
+.nav__close {
+    color: #31A0DE;
+    position: absolute;
+    right: 10px;
+    top: 15px;
+    cursor: pointer;
+    font-size: 1.85rem;
+    box-sizing: content-box;
+    padding: 0.35rem;
+    background: #F3F5F7;
+    box-shadow: -1.875px -1.875px 3.75px rgba(255, 255, 255, 0.85), 1.875px 1.875px 3.75px rgba(0, 0, 0, 0.15);
+    border-radius: 21.875px;
+}
+
+
+.navContainer {
+    height: 150%;
+    width: 200px;
+    padding: 3.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+
+
+
+
+@media (min-width: 992px) and (max-width: 1380px) {
+
+}
+
+
+@media screen and (max-width: 992px) {
+    .nav_btn_container {
+        display: none;
+    }
+    .nav__mob {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 800px) {
+
+}
+
+@media screen and (max-width: 600px) {
+
+}
+
+@media screen and (max-width: 400px) {
+
+}
+  
+@media only screen and (min-device-width: 320px) and (max-device-width: 
+  480px) and (-webkit-device-pixel-ratio: 2) and (device-aspect-ratio: 2/3) {
+
+}
+
+
+@media only screen and (device-width: 768px) {
+
 }

@@ -114,13 +114,11 @@
     .ls__img:hover{
         transform: rotate(var(--angle)) translateY(calc(var(--y) - 20px)) scale(1.1);
     }
-}
-
-@media (min-width: 992px) and (max-width: 1380px) {
     .spin-container{
         --scale: 2;
     }
 }
+
 
 
 

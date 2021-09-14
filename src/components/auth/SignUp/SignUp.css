@@ -211,7 +211,9 @@
 
 
 @media (min-width: 992px) and (max-width: 1380px) {
-
+    .lsc__left__form {
+        transform: translateX(5rem);
+    }
 }
 
 

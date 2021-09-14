@@ -1,9 +1,10 @@
-import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
-
+import React, { useState , useContext } from 'react'
+import { Link, useHistory } from 'react-router-dom'
+import axios from 'axios'
 import { BsEye, BsEyeSlash } from "react-icons/bs";
 
 import './SignUp.css'
+import { AuthContext } from '../../../context/AuthContext'
 import Globe from '../../UI/Globe/Globe';
 
 function SignUp() {
@@ -14,22 +15,48 @@ function SignUp() {
     const [password, setPassword] = useState('')
 
     const [hidden, setHidden] = useState(true)
+    const [errorMsg, setErrorMsg] = useState('')
+
+    const history = useHistory()
+
+    const { currentUser } = useContext(AuthContext);
+
+    if (currentUser) {
+        history.push('/')
+    }
+
 
     const togglePassView = () => {
         setHidden(!hidden)
     }
 
-    const handleSignUp = (e) => {
+    const handleSignUp = async (e) => {
         e.preventDefault()
+        const URL = process.env.REACT_APP_BASE_URL + '/auth/signup'
+        const data = {
+            username,
+            name,
+            phone,
+            password
+        }
         if(username && name && phone && password) {
-            console.log(username)
-            console.log(name)
-            console.log(phone)
+            console.log(URL)
+            try {// eslint-disable-next-line
+                const res = await axios.post(URL, data)
+                history.push('/login')
+                console.log(res)
+            } catch (error) {
+                console.log(error)
+                setErrorMsg('Signin failed!')
+                setTimeout(() => { setErrorMsg('') }, 4000)
+            }
         }
         else {
-            alert('Enter all the fields')
+            setErrorMsg('Enter all the fields')
         }
     }
+
+    console.log(errorMsg)
 
     return (
         <div className="signUp">
