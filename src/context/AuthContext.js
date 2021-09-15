@@ -5,17 +5,16 @@ export const AuthContext = createContext()
 function AuthContextProvider(props) {
     const [currentUser, setCurrentUser] = useState(localStorage.getItem('soydevsUser'))
     const [name, setName] = useState(localStorage.getItem('soydevsName'))
-    const [token, setToken] = useState(localStorage.getItem('token'))
+    const [token, setToken] = useState(localStorage.getItem('soydevsToken'))
 
     const handleUser = (user) => {
         setCurrentUser(user)
         localStorage.setItem('soydevsUser', user)
     }
-    console.log('current name' + name)
 
     const handleToken = (token) => {
         setToken(token)
-        localStorage.setItem('token', token)
+        localStorage.setItem('soydevsToken', token)
     }
 
     const handleName = (name) => {
@@ -26,7 +25,7 @@ function AuthContextProvider(props) {
 
     const handleLogout = () => {
         localStorage.removeItem('soydevsUser')
-        localStorage.removeItem('token')
+        localStorage.removeItem('soydevsToken')
     }
 
 

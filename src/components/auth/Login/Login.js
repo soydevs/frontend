@@ -15,13 +15,8 @@ function Login() {
 
     const [hidden, setHidden] = useState(true)
 
-    const { handleUser, handleToken, currentUser, handleName } = useContext(AuthContext);
+    const { handleUser, handleToken, handleName } = useContext(AuthContext);
     const history = useHistory()
-
-    if (currentUser) {
-        history.push('/home')
-        window.location.reload()
-    }
 
     const togglePassView = () => {
         setHidden(!hidden)
@@ -42,6 +37,7 @@ function Login() {
                     handleToken(res.data.token)
                     handleUser(res.data.user)
                     handleName(res.data.user.name)
+                    console.log(res)
                     history.push('/home')
                 } else {
                     setErrorMsg('Invalid credentials')

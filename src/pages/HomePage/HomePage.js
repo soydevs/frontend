@@ -12,7 +12,8 @@ function HomePage() {
     const { name } = useContext(AuthContext);
 
     const shortname = (name) => {
-        return name.split(" ")[0]
+        if (name)
+            return name.split(" ")[0]
     }
 
     return (
