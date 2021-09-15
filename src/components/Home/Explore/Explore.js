@@ -46,7 +46,7 @@ const explore = [
 function Explore() {
     return (
         <div className="explore">
-            <h1>Explore</h1>
+            <h1>Explore Near Me</h1>
 
             <div className="explore__container">
                 {explore.map(exp => (

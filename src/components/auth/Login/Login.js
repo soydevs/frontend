@@ -15,7 +15,7 @@ function Login() {
 
     const [hidden, setHidden] = useState(true)
 
-    const { handleUser, handleToken, currentUser } = useContext(AuthContext);
+    const { handleUser, handleToken, currentUser, handleName } = useContext(AuthContext);
     const history = useHistory()
 
     if (currentUser) {
@@ -39,8 +39,9 @@ function Login() {
             try {
                 const res = await axios.post(URL, data)
                 if(res.data.success) {
-                    await handleToken(res.data.token)
-                    await handleUser(res.data.user)
+                    handleToken(res.data.token)
+                    handleUser(res.data.user)
+                    handleName(res.data.user.name)
                     history.push('/home')
                 } else {
                     setErrorMsg('Invalid credentials')

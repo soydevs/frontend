@@ -13,7 +13,7 @@
     padding: 3rem 1.5rem;
 }
 
-.upcomingEvents h1 {
+.upcomingEvents h1, .eventsMobContainer h1 {
     font-family: var(--primary-font);
     font-style: normal;
     font-weight: 600;
@@ -21,7 +21,7 @@
     color: #555555;
 }
 
-.upcomingEvents__container {
+.upcomingEvents__container, .upcomingEvents__container_mob {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -29,6 +29,10 @@
     gap: 0.85rem;
     width: 100%;
     margin-top: 3rem;
+}
+
+.upcomingEvents__container_mob {
+    display: none;
 }
 
 .singleEvent {
@@ -77,3 +81,125 @@
     letter-spacing: 0.01em;
     color: rgba(85, 85, 85, 0.7);
 }
+
+.events__mob {
+    position: relative;
+    width: 100%;
+    display: none;
+}
+
+
+.events__open {
+    position: absolute;
+    color: var(--blue);
+    cursor: pointer;
+    font-size: 1.75rem;
+    box-sizing: content-box;
+    padding: 0.35rem;
+    background: #F3F5F7;
+    box-shadow: -1.875px -1.875px 3.75px rgba(255, 255, 255, 0.85), 1.875px 1.875px 3.75px rgba(0, 0, 0, 0.15);
+    border-radius: 21.875px;
+    top: 20px;
+    right: 10px;
+}
+
+.events__close {
+    color: #31A0DE;
+    position: absolute;
+    right: 10px;
+    top: 15px;
+    cursor: pointer;
+    font-size: 1.85rem;
+    box-sizing: content-box;
+    padding: 0.35rem;
+    background: #F3F5F7;
+    box-shadow: -1.875px -1.875px 3.75px rgba(255, 255, 255, 0.85), 1.875px 1.875px 3.75px rgba(0, 0, 0, 0.15);
+    border-radius: 21.875px;
+}
+
+ 
+@media (min-width: 992px) and (max-width: 1380px) {
+    .upcomingEvents {
+        padding: 3rem 0.5rem;
+    }
+    .upcomingEvents h1{
+        font-size: 1.25rem;
+        white-space: nowrap;
+    }
+    .upcomingEvents__container {
+        margin-top: 2rem;
+    }
+    .singleEvent__content h2 {
+        font-size: 19px;
+    }
+    
+    .singleEvent__content h6 {
+        font-size: 14px;
+    }
+}
+
+
+@media screen and (max-width: 992px) {
+
+    .events__mob {
+        display: block;
+    }
+
+    .upcomingEvents {
+        justify-content: initial;
+        align-items: center;
+        background: none;
+        height: 100px;
+        z-index: 999;
+        padding: 0;
+    }
+
+    .upcomingEvents h1 {
+        display: none;
+    }
+
+    .upcomingEvents__container {
+        display: none;
+    }
+
+    .upcomingEvents__container_mob {
+        display: block;
+        margin-top: 0rem;
+    }
+    .eventsMobContainer {
+        width: 350px;
+        padding: 3.5rem 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        grid-gap: 1.5rem;
+        gap: 1.5rem;
+    }
+
+    .eventsMobContainer h1 {
+        padding-left: 0.8rem;
+    }
+    
+}
+
+@media screen and (max-width: 800px) {
+    .eventsMobContainer {
+        width: 320px;
+        padding: 3.5rem 2rem;
+    }
+    
+}
+
+@media screen and (max-width: 600px) {
+    .eventsMobContainer {
+        width: 320px;
+        padding: 3.5rem 1.5rem;
+
+    }
+    
+}
+
+@media screen and (max-width: 400px) {
+
+} 

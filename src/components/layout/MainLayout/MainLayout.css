@@ -59,13 +59,15 @@
     }
 
     .main__layout__events {
-        display: none;
+        flex: 0;
     }
 
 }
 
 @media screen and (max-width: 800px) {
-
+    .main__layout__body {
+        padding: 0;
+    }
 }
 
 @media screen and (max-width: 600px) {

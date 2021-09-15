@@ -11,7 +11,7 @@
     font-family: var(--primary-font);
     font-style: normal;
     font-weight: bold;
-    font-size: 30px;
+    font-size: 1.85rem;
     color: #555555;
 }
 
@@ -36,7 +36,7 @@
     align-items: flex-start;
     padding: 0.74rem;
     background: #F3F5F7;
-    box-shadow: -3px -3px 6px #FFFFFF, 3px 3px 6px rgba(0, 0, 0, 0.15);
+    box-shadow: -3px -3px 6px #FFFFFF, 3px 3px 6px rgba(0, 0, 0, 0.35);
     border-radius: 10px;
     cursor: pointer;
     font-family: Poppins;
@@ -64,5 +64,50 @@
     letter-spacing: 0.01em;
     color: rgba(85, 85, 85, 0.6);
     margin-top: -0.25rem;
+}
+
+
+
+
+@media (min-width: 992px) and (max-width: 1380px) {
+
+}
+
+
+@media screen and (max-width: 992px) {
+    .trending {
+        margin-top: 2rem;
+    }
+    .trending h1 {
+        font-size: 1.65rem;
+    }
+    
     
 }
+
+@media screen and (max-width: 800px) {
+    .trending h1 {
+        font-size: 1.55rem;
+    }
+    .trendingCard img {
+        border-radius: 10px;
+        width: 120px;
+        height: 100px;
+    }
+    .trendingCard h3 {
+        font-size: 17px;
+    }
+    .trendingCard p {
+        font-size: 11px;
+    }
+    
+}
+
+@media screen and (max-width: 600px) {
+    
+    
+}
+
+@media screen and (max-width: 400px) {
+
+} 

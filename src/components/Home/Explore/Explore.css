@@ -4,13 +4,14 @@
     align-items: flex-start;
     gap: 1rem;
     width: 100%;
+    margin-top: 4rem;
 }
 
 .explore h1 {
     font-family: var(--primary-font);
     font-style: normal;
     font-weight: bold;
-    font-size: 30px;
+    font-size: 1.85rem;
     color: #555555;
 }
 
@@ -58,3 +59,48 @@
     text-align: center;
     color: #2A5E7C;
 }
+
+
+
+@media (min-width: 992px) and (max-width: 1380px) {
+
+}
+
+
+@media screen and (max-width: 992px) {
+    .explore {
+        margin-top: 2rem;
+    }
+    .explore h1 {
+        font-size: 1.65rem;
+    }
+    
+}
+
+@media screen and (max-width: 800px) {
+    .explore h1 {
+        font-size: 1.55rem;
+    }
+    .exploreCard {
+        width: 120px;
+        height: 45px;
+    }
+    .exploreCard img {
+        width: 32px;
+        height: 32px;
+    }
+    
+    .exploreCard h3 {
+        font-size: 1.05rem;
+    }
+    
+}
+
+@media screen and (max-width: 600px) {
+    
+    
+}
+
+@media screen and (max-width: 400px) {
+
+} 

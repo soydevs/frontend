@@ -3,28 +3,34 @@ import React, { createContext, useState } from "react";
 export const AuthContext = createContext()
 
 function AuthContextProvider(props) {
-    const [currentUser, setCurrentUser] = useState(localStorage.getItem('soydevsLocalUser'))
-    const [token, setToken] = useState(localStorage.getItem('soydevsToken'))
+    const [currentUser, setCurrentUser] = useState(localStorage.getItem('soydevsUser'))
+    const [name, setName] = useState(localStorage.getItem('soydevsName'))
+    const [token, setToken] = useState(localStorage.getItem('token'))
 
     const handleUser = (user) => {
         setCurrentUser(user)
-        localStorage.setItem('soydevsLocalUser', user)
-        console.log('current user' + currentUser)
+        localStorage.setItem('soydevsUser', user)
     }
+    console.log('current name' + name)
 
     const handleToken = (token) => {
         setToken(token)
-        localStorage.setItem('soydevsToken', token)
+        localStorage.setItem('token', token)
+    }
+
+    const handleName = (name) => {
+        setName(name)
+        localStorage.setItem('soydevsName', name)
     }
 
 
     const handleLogout = () => {
-        localStorage.removeItem('soydevsLocalUser')
-        localStorage.removeItem('soydevsToken')
+        localStorage.removeItem('soydevsUser')
+        localStorage.removeItem('token')
     }
 
 
-    const value = { currentUser, handleUser, handleLogout, handleToken, token }
+    const value = { currentUser, handleUser, handleLogout, handleToken, token, name, handleName }
 
 
 

@@ -1,11 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import { NavLink, Link } from "react-router-dom";
 import { FiHome } from "react-icons/fi";
 
+import { AuthContext } from '../../../context/AuthContext'
 import "./Sidebar.css";
 
 
 function Sidebar() {
+
+  const { name } = useContext(AuthContext);
 
   return (
     <div className='sidebar'>
@@ -35,7 +38,7 @@ function Sidebar() {
         <Link to='/profile' className="sidebar__profile">
           <img src="https://images.unsplash.com/photo-1569466896818-335b1bedfcce?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="" />
           <div className="sidebar__profile__info">
-            <h1>Jane Doe</h1>
+            <h1>{name}</h1>
             <p>Traveller</p>
           </div>
         </Link>
