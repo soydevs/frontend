@@ -40,8 +40,7 @@ function SignUp() {
             password
         }
         if(username && name && phone && password) {
-            console.log(URL)
-            try {// eslint-disable-next-line
+            try {
                 const res = await axios.post(URL, data)
                 history.push('/login')
                 console.log(res)

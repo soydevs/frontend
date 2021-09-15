@@ -19,7 +19,7 @@ function Login() {
     const history = useHistory()
 
     if (currentUser) {
-        history.push('/')
+        history.push('/home')
         window.location.reload()
     }
 
@@ -36,19 +36,15 @@ function Login() {
         }
         if(username && password) {
             setErrorMsg('')
-            console.log(data)
-            try {// eslint-disable-next-line
+            try {
                 const res = await axios.post(URL, data)
                 if(res.data.success) {
                     await handleToken(res.data.token)
-                    await handleUser(res.data.username)
-                    history.push('/')
+                    await handleUser(res.data.user)
+                    history.push('/home')
                 } else {
                     setErrorMsg('Invalid credentials')
                 }
-                console.log(res)
-
-                console.log(res.data.message)
             } catch (error) {
                 console.log(error)
                 setErrorMsg('Signin failed!')
@@ -56,9 +52,11 @@ function Login() {
             }
         }
         else {
-            alert('Enter all the fields')
+            setErrorMsg('Enter all the fields')
         }
     }
+
+    console.log(errorMsg)
 
 
     return (

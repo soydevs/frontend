@@ -9,13 +9,12 @@ function AuthContextProvider(props) {
     const handleUser = (user) => {
         setCurrentUser(user)
         localStorage.setItem('soydevsLocalUser', user)
-        console.log(currentUser)
+        console.log('current user' + currentUser)
     }
 
     const handleToken = (token) => {
         setToken(token)
         localStorage.setItem('soydevsToken', token)
-        console.log(token)
     }
 
 

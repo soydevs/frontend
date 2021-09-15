@@ -7,27 +7,24 @@ import { AuthContext } from '../../../context/AuthContext'
 
 function Profile() {
 
-    const [name, setName] = useState('Jane Doe')
-    const [phone, setPhone] = useState('1234569870')
-    const [location, setLocation] = useState('Kochi')
-    const [email, setEmail] = useState('kanedoe@gmail.com')
-    const [birthdate, setBirthdate] = useState('07-09-2001')
-
+    const [name, setName] = useState('')
+    const [phone, setPhone] = useState('')
+    const [location, setLocation] = useState('')
+    const [email, setEmail] = useState('')
+    const [birthdate, setBirthdate] = useState('')
+// eslint-disable-next-line
     const [user, setUser] = useState()
-    const { token} = useContext(AuthContext);
-
-    console.log(token)
+    const { token } = useContext(AuthContext);
 
     const fetchData = async () => {
         const URL = process.env.REACT_APP_BASE_URL + '/users';
-        try {// eslint-disable-next-line
+        try {
             const res = await axios.get(URL,  {headers: { 'Authorization': `Bearer ${token}` }})
 
-            console.log(res.data)
             setUser(res.data)
-            setName(user.name)
-            setPhone(user.phone)
-            setEmail(user.email)
+            setName(res.data.name)
+            setPhone(res.data.phone)
+            setEmail(res.data.email)
         } catch (error) {
             console.log(error)
         }
@@ -35,8 +32,7 @@ function Profile() {
 
 
     useEffect(() => {
-        fetchData()
-
+        fetchData() // eslint-disable-next-line
     }, [])
 
 
@@ -56,7 +52,7 @@ function Profile() {
                     <label>Name</label>
                     <div className="profile_input_container">
                         <HiOutlineUserCircle className="profile__input_icon"/>
-                        <input value={name} onChange={(e) => setName(e.target.value)} type="text" className="profile_input"/>
+                        <input value={name || ''} onChange={(e) => setName(e.target.value)} type="text" className="profile_input"/>
                     </div>
                     <HiPencil className="edit__profile"/>
                 </div>
@@ -64,7 +60,7 @@ function Profile() {
                     <label>Location</label>
                     <div className="profile_input_container">
                         <HiOutlineLocationMarker className="profile__input_icon"/>
-                        <input value={location} onChange={(e) => setLocation(e.target.value)} type="text" className="profile_input"/>
+                        <input value={location || ''} onChange={(e) => setLocation(e.target.value)} type="text" className="profile_input"/>
                     </div>
                     <HiPencil className="edit__profile"/>
                 </div>
@@ -72,7 +68,7 @@ function Profile() {
                     <label>Birthdate</label>
                     <div className="profile_input_container">
                         <HiOutlineCake className="profile__input_icon"/>
-                        <input value={birthdate} onChange={(e) => setBirthdate(e.target.value)} type="text" className="profile_input"/>
+                        <input value={birthdate || ''} onChange={(e) => setBirthdate(e.target.value)} type="text" className="profile_input"/>
                     </div>
                     <HiPencil className="edit__profile"/>
                 </div>
@@ -80,7 +76,7 @@ function Profile() {
                     <label>Phone</label>
                     <div className="profile_input_container">
                         <HiOutlinePhone className="profile__input_icon"/>
-                        <input value={phone} onChange={(e) => setPhone(e.target.value.replace(/[^0-9]/g, ""))} type="text" className="profile_input"/>
+                        <input value={phone || ''} onChange={(e) => setPhone(e.target.value.replace(/[^0-9]/g, ""))} type="text" className="profile_input"/>
                     </div>
                     <HiPencil className="edit__profile"/>
                 </div>
@@ -88,7 +84,7 @@ function Profile() {
                     <label>Email</label>
                     <div className="profile_input_container">
                         <HiOutlineMail className="profile__input_icon"/>
-                        <input value={email} onChange={(e) => setEmail(e.target.value)} type="text" className="profile_input"/>
+                        <input value={email || ''} onChange={(e) => setEmail(e.target.value)} type="text" className="profile_input"/>
                     </div>
                     <HiPencil className="edit__profile"/>
                 </div>
