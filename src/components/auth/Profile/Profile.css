@@ -109,3 +109,77 @@
     font-size: 16px;
     color: rgba(85, 85, 85, 0.7);
 }
+
+
+
+
+@media (min-width: 992px) and (max-width: 1380px) {
+
+}
+
+
+@media screen and (max-width: 992px) {
+
+    .phi_img img {
+        width:182px;
+        height: 182px;
+        border-radius: 50%;
+    }
+    .profile__body {
+        width: 80%;
+        margin-top: 3rem;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .profile__body {
+        width: 100%;
+        margin-top: 2rem;
+    }
+
+    .profile__header__info h1 {
+        font-size: 2.5rem;
+        margin-top: 0.5rem;
+    }
+    .profile__header__info p {
+        font-weight: 500;
+        font-size: 0.95rem;
+    }
+
+    .profile_body_details {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        padding: 0.5rem;
+        width: 100%;
+        gap: 0.1rem;
+    }
+
+    .profile_input_container {
+        width: 100%;
+        position: relative;
+    }
+
+    .edit__profile {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 600px) {
+
+}
+
+@media screen and (max-width: 400px) {
+
+}
+  
+@media only screen and (min-device-width: 320px) and (max-device-width: 
+  480px) and (-webkit-device-pixel-ratio: 2) and (device-aspect-ratio: 2/3) {
+
+}
+
+
+@media only screen and (device-width: 768px) {
+
+}

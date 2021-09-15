@@ -1,4 +1,5 @@
 import React from 'react'
+import { UpcomingEvents } from '../..'
 
 import Sidebar from '../Sidebar/Sidebar'
 
@@ -15,7 +16,7 @@ function MainLayout({ children }) {
                     {children}
                 </div>
                 <div className="main__layout__events">
-                    <h1>Events</h1>
+                    <UpcomingEvents />
                 </div>
             </div>
         </div>

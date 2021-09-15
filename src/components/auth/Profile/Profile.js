@@ -43,8 +43,8 @@ function Profile() {
                     <div className="phi_img">
                         <img src="https://images.unsplash.com/photo-1569466896818-335b1bedfcce?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="" />
                     </div>
-                    <h1>Jane Doe</h1>
-                    <p>janedoe@gmail.com</p>
+                    <h1>{name}</h1>
+                    <p>{email}</p>
                 </div>
             </div>
             <div className="profile__body">

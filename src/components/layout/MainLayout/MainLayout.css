@@ -53,6 +53,13 @@
     .main__layout__body {
         flex: none;
         width: 100%;
+        padding-bottom: 80px;
+        margin: 0;
+        padding: 1rem;
+    }
+
+    .main__layout__events {
+        display: none;
     }
 
 }

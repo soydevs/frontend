@@ -7,27 +7,25 @@ import "./Sidebar.css";
 
 function Sidebar() {
 
-
-  const navActiveStyle = {
-    color: "#FAFAFA",
-    fontWeight: 600,
-    background: "#31A0DE",
-    borderRadius: '20px'
-  };
- 
-
-
   return (
     <div className='sidebar'>
         <div className="sidebar__header">
             <h1>Logo</h1>
         </div>
         <div className='sidebar--container'>
-            <NavLink to='/home' className='nav--item' activeStyle={navActiveStyle}>
+            <NavLink to='/home' className='nav--item' activeClassName="navActive">
                 <FiHome className="navIcon"/>
                 <p>Home</p>
             </NavLink>
-            <NavLink to='/profile' className='nav--item' activeStyle={navActiveStyle}>
+            <NavLink to='/about' className='nav--item' activeClassName="navActive">
+                <FiHome className="navIcon"/>
+                <p>About</p>
+            </NavLink>
+            <NavLink to='/connect' className='nav--item' activeClassName="navActive">
+                <FiHome className="navIcon"/>
+                <p>Connect</p>
+            </NavLink>
+            <NavLink to='/profile' className='nav--item' activeClassName="navActive">
                 <FiHome className="navIcon"/>
                 <p>Profile</p>
             </NavLink>

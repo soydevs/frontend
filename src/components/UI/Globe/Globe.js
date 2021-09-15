@@ -1,12 +1,12 @@
 import React from 'react'
 import './Globe.css'
 
-import ls_img1 from '../../../assets/svg/ls_img1.svg'
-import ls_img2 from '../../../assets/svg/ls_img2.svg'
-import ls_img3 from '../../../assets/svg/ls_img3.svg'
-import ls_img4 from '../../../assets/svg/ls_img4.svg'
-import ls_img5 from '../../../assets/svg/ls_img5.svg'
-import ls_img6 from '../../../assets/svg/ls_img6.svg'
+import ls_img1 from '../../../assets/svg/monuments/ls_img1.svg'
+import ls_img2 from '../../../assets/svg/monuments/ls_img2.svg'
+import ls_img3 from '../../../assets/svg/monuments/ls_img3.svg'
+import ls_img4 from '../../../assets/svg/monuments/ls_img4.svg'
+import ls_img5 from '../../../assets/svg/monuments/ls_img5.svg'
+import ls_img6 from '../../../assets/svg/monuments/ls_img6.svg'
 
 function Globe() {
     return (
