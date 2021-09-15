@@ -2,7 +2,6 @@ import React from 'react'
 
 import './Landing.css'
 
-import train from '../../assets/svg/train.svg'
 
 function Landing() {
     return (
@@ -13,7 +12,6 @@ function Landing() {
                     <div className="landing_input_div">
                         <input type="text" className="landing_input" placeholder="Eg. Edapally"/>
                     </div>
-                    <img src={train} alt="" />
                 </div>
             </div>
         </div>
