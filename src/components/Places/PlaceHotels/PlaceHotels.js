@@ -18,25 +18,25 @@ const hotels = [
     },
     {
         id: 2,
-        title: 'Jaipur',
+        title: 'KSRTC Hotel',
         rating: 4,
         image: two
     },
     {
         id: 3,
-        title: 'Agra',
+        title: 'Shaap',
         rating: 3,
         image: three
     },
     {
         id: 4,
-        title: 'Chennai',
+        title: 'Thakkaram',
         rating: 5,
         image: four
     },
     {
         id: 5,
-        title: 'Rajasthan',
+        title: 'Paragon',
         rating: 2,
         image: five
     },
