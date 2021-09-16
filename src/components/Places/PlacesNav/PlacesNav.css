@@ -1,0 +1,28 @@
+.placesNav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+.placesNav__icon {
+    background: #ECF3F8;
+    box-shadow: -3.84px -3.84px 7.68px rgba(255, 255, 255, 0.85), 3.84px 3.84px 7.68px rgba(0, 0, 0, 0.15);
+    border-radius: 44.8px;
+    color: var(--primary-color);
+    font-size: 2.75rem;
+    padding: 0.6rem;
+    cursor: pointer;
+
+}
+
+
+.placesNav h1 {
+    color: var(--primary-color);
+    font-family: var(--primary-font);
+    font-style: normal;
+    font-weight: bold;
+    font-size: 2.55rem;
+    text-align: center;
+}

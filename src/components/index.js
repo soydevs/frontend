@@ -11,3 +11,9 @@ export { default as UpcomingEvents } from './UpcomingEvents/UpcomingEvents'
 
 export { default as Explore } from './Home/Explore/Explore'
 export { default as Trending } from './Home/Trending/Trending'
+
+export { default as PlacesNav } from './Places/PlacesNav/PlacesNav'
+export { default as PlaceAbout } from './Places/PlaceAbout/PlaceAbout'
+export { default as PlaceReview } from './Places/PlaceReview/PlaceReview'
+export { default as PlaceHotels } from './Places/PlaceHotels/PlaceHotels'
+

@@ -1,4 +1,4 @@
-.trending {
+.placeHotels {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -7,7 +7,7 @@
     margin-top: 4rem;
 }
 
-.trending h1 {
+.placeHotels h1 {
     font-family: var(--primary-font);
     font-style: normal;
     font-weight: bold;
@@ -15,7 +15,7 @@
     color: var(--text-primary);
 }
 
-.trending__container {
+.placeHotels__container {
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -27,11 +27,11 @@
     padding-bottom: 2rem;
     padding-right: 1rem;
 }
-.trending__container::-webkit-scrollbar {
+.placeHotels__container::-webkit-scrollbar {
     display: none;
 }
 
-.trendingCard {
+.hotelsCard {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -44,23 +44,22 @@
     font-style: normal;
     font-weight: 600;
     flex-shrink: 0;
-    text-decoration: none;
 }
 
-.trendingCard img {
+.hotelsCard img {
     border-radius: 10px;
     width: 140px;
     height: 120px;
 }
 
-.trendingCard h3 {
+.hotelsCard h3 {
     font-size: 18px;
     align-items: center;
     letter-spacing: 0.01em; 
     color: var(--text-primary);
     margin-top: 0.85rem;
 }
-.trendingCard p {
+.hotelsCard p {
     font-size: 12px;
     align-items: center;
     letter-spacing: 0.01em;
@@ -77,10 +76,10 @@
 
 
 @media screen and (max-width: 992px) {
-    .trending {
+    .placeHotels {
         margin-top: 2rem;
     }
-    .trending h1 {
+    .placeHotels h1 {
         font-size: 1.65rem;
     }
     
@@ -88,18 +87,18 @@
 }
 
 @media screen and (max-width: 800px) {
-    .trending h1 {
+    .placeHotels h1 {
         font-size: 1.55rem;
     }
-    .trendingCard img {
+    .hotelsCard img {
         border-radius: 10px;
         width: 120px;
         height: 100px;
     }
-    .trendingCard h3 {
+    .hotelsCard h3 {
         font-size: 17px;
     }
-    .trendingCard p {
+    .hotelsCard p {
         font-size: 11px;
     }
     

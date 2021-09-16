@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { Link } from 'react-router-dom'
 import './Trending.css'
 import one from '../../../assets/png/trending/1.png'
 import two from '../../../assets/png/trending/2.png'
@@ -49,11 +49,11 @@ function Trending() {
 
             <div className="trending__container">
                 {trending.map(exp => (
-                    <div className="trendingCard" key={exp.id}>
+                    <Link to={`/places/${exp.title}`} className="trendingCard" key={exp.id}>
                         <img src={exp.image} alt="" />
                         <h3>{exp.title}</h3>
                         <p>{exp.subtitle}</p>
-                    </div>
+                    </Link>
                 ))}
             </div>
         </div>

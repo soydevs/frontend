@@ -1,0 +1,114 @@
+.placeReview {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    width: 100%;
+    margin-top: 2rem;
+}
+
+.placeReview h2 {
+    font-family: var(--primary-font);
+    font-weight: bold;
+    font-size: 1.95rem;
+    margin-bottom: 0.525rem;
+    color: var(--text-primary);
+}
+
+.reviews__container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 2rem;
+    width: 100%;
+    overflow-x: scroll;
+    -ms-overflow-style: none;  
+    scrollbar-width: none; 
+    padding-bottom: 2rem;
+    padding-right: 1rem;
+}
+.reviews__container::-webkit-scrollbar {
+    display: none;
+}
+
+.reviewCard {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 284px;
+    height: 355px;
+    flex-shrink: 0;
+    padding: 0.75rem;
+}
+
+.reviewCard__profile {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.reviewCard__profile img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+}
+
+.reviewCard__profile__info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    font-family: var(--primary-font);
+    font-style: normal;
+    margin-left: 1rem;
+}
+
+.reviewCard__profile__info h4 {
+    font-weight: 600;
+    font-size: 18px;
+    color: var(--text-primary);
+}
+
+.reviewCard__profile__info p {
+    font-weight: 600;
+    font-size: 15px;
+    color: var(--text-primary);
+    opacity: 0.7;
+}
+
+.rating__container {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.3rem;
+    margin: 0.5rem 0;
+}
+
+.rating_icon {
+    color: var(--primary-color);
+    font-size: 0.65rem;
+}
+
+.rating_icon_grey {
+    color: rgba(85, 85, 85, 0.3);;
+    font-size: 0.65rem;
+}
+
+.reviewCard__content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    color: var(--text-primary);
+    font-family: var(--primary-font);
+    font-style: normal;
+}
+
+.reviewCard__content h3 {
+    font-size: 1.37rem;
+    font-weight: 600;
+}
+
+.reviewCard__content p {
+    font-size: 0.95rem;
+    margin-top: 0.4rem;
+    font-weight: 500;
+}
