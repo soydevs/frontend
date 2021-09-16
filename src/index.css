@@ -7,18 +7,21 @@
 
 :root {
   --primary-font: 'Montserrat', sans-serif;
-  --primary-color: #3ACE40;
 }
 
 [data-theme="light"]{
-  --blue: #31A0DE;
+  --primary-color: #31A0DE;
+  --primary-bg: #F3F5F7;
+  --text-primary: #555555;
   --bg: #ECF4F8;
   --bg-invert: #2F2F2F;
   --input-shadow: inset 3px 3px 6px rgba(255, 255, 255, 0.85), inset -3px -3px 6px rgba(0, 0, 0, 0.2);
 }
 
 [data-theme="dark"]{
-  --blue: #B1E0FA;
+  --primary-color: #B1E0FA;
+  --primary-bg: #F3F5F7;
+  --text-primary: #555555;
   --bg: #2F2F2F;
   --bg-invert: #ECF4F8;
   --input-shadow: inset 3px 3px 6px rgba(255, 255, 255, 0.20), inset -3px -3px 6px rgba(0, 0, 0, 0.50);

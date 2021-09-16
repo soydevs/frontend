@@ -22,7 +22,7 @@
 }
 
 .profile__header__info h1 {
-    color: var(--blue);
+    color: var(--primary-color);
     font-weight: bold;
     font-size: 3rem;
     text-align: center;
@@ -71,7 +71,7 @@
     font-weight: 500;
     font-size: 16px;
     line-height: 30px;
-    color: #555555;
+    color: var(--text-primary);
 }
 
 .profile_input_container {
@@ -83,14 +83,14 @@
     position: absolute;
     top: 5px;
     left: 0.4rem;
-    color: var(--blue);
+    color: var(--primary-color);
     font-size: 1.80rem;
 }
 
 .edit__profile {
     width: 5%;
     font-size: 1.225rem;
-    color: var(--blue);
+    color: var(--primary-color);
     cursor: pointer;
 }
 

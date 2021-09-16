@@ -18,7 +18,7 @@
 
 .navbar--container h2 {
     font-family: 'Lobster Two', cursive;
-    color: var(--blue);
+    color: var(--primary-color);
     cursor: pointer;
     font-style: italic;
     font-weight: normal;
@@ -50,14 +50,14 @@
 }
 
 .nav_login {
-    background: var(--blue);
+    background: var(--primary-color);
     color: var(--bg);
     border: none;
 }
 
 .nav_signup {
-    color: var(--blue);
-    border: 3px solid var(--blue);
+    color: var(--primary-color);
+    border: 3px solid var(--primary-color);
     background: none;
 }
 
@@ -67,7 +67,7 @@
 
 
 .nav__open {
-    color: var(--blue);
+    color: var(--primary-color);
     cursor: pointer;
     font-size: 1.75rem;
     box-sizing: content-box;

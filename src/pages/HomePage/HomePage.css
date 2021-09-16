@@ -23,7 +23,7 @@
     font-family: var(--primary-font);
     font-style: normal;
     gap: 0.25rem;
-    color: #555555;
+    color: var(--text-primary);
 }
 
 .homePage__headerText p {
@@ -53,7 +53,7 @@
     margin: 1rem auto;
     padding: 1rem 1.5rem;
     padding-right: 3.7rem;
-    background: #F3F5F7;
+    background: var(--primary-bg);
     box-shadow: inset 3px 3px 6px rgba(255, 255, 255, 0.85), inset -3px -3px 6px rgba(0, 0, 0, 0.15);
     border-radius: 35px;
     font-family: var(--primary-font);

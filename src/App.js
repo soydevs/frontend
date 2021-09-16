@@ -5,7 +5,7 @@ import { ThemeContext } from './context/ThemeContext';
 import './App.css';
 import PrivateRoute from './utils/PrivateRoute'
 import { Login, SignUp } from './components';
-import { FourNotFour, HomePage, ProfilePage, LandingPage } from './pages'
+import { FourNotFour, HomePage, ProfilePage, LandingPage, PlacePage } from './pages'
 
 function App() {
 
@@ -19,6 +19,7 @@ function App() {
             <Route path='/signup' component={SignUp} exact/>
             <Route path='/' component={LandingPage} exact/>
             <PrivateRoute path='/home' component={HomePage} exact/>
+            <PrivateRoute path='/places/:id' component={PlacePage} exact/>
             <PrivateRoute path='/profile' exact component={ProfilePage}/>
             <Route component={FourNotFour} />
           </Switch>

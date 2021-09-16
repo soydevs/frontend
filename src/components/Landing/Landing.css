@@ -16,14 +16,14 @@
     font-weight: bold;
     font-size: 3.6rem;
     text-align: start;
-    color: #555555;
+    color: var(--text-primary);
     width: 50%;
     line-height: 112%;
     padding: 2rem 3rem;
 }
 
 .blue__span {
-    color: var(--blue);
+    color: var(--primary-color);
 }
 
 .landing__container {

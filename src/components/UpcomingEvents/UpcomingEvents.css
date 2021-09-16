@@ -18,7 +18,7 @@
     font-style: normal;
     font-weight: 600;
     font-size: 1.5rem;
-    color: #555555;
+    color: var(--text-primary);
 }
 
 .upcomingEvents__container, .upcomingEvents__container_mob {
@@ -69,7 +69,7 @@
     align-items: center;
     text-align: center;
     letter-spacing: 0.01em;
-    color: #555555;
+    color: var(--text-primary);
 }
 
 .singleEvent__content h6 {
@@ -91,7 +91,7 @@
 
 .events__open {
     position: absolute;
-    color: var(--blue);
+    color: var(--primary-color);
     cursor: pointer;
     font-size: 1.75rem;
     box-sizing: content-box;

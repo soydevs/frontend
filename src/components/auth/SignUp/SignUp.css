@@ -35,7 +35,7 @@
     height: 300px;
     transform: translate(-35%, -35%);
     border-radius: 50%;
-    background: var(--blue);
+    background: var(--primary-color);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -135,15 +135,15 @@
 }
 
 .signup_btn {
-    background: var(--blue);
+    background: var(--primary-color);
     color: var(--bg);
     border: none;
 }
 
 .login_btn {
     background: var(--bg);
-    color: var(--blue);
-    border: 3px solid var(--blue);
+    color: var(--primary-color);
+    border: 3px solid var(--primary-color);
 }
 
 .login__signup__btn h6 {
@@ -156,7 +156,7 @@
     text-align: center;
     position: relative;
     padding: 5px 10px;
-    color: var(--blue);
+    color: var(--primary-color);
 }
 
 .login__signup__btn h6::before{
@@ -168,7 +168,7 @@
     height: 2px;
     border-radius: 3px;
     width: 50%;
-    background: var(--blue);
+    background: var(--primary-color);
 }
 
 .login__signup__btn h6::after{
@@ -180,7 +180,7 @@
     height: 2px;
     border-radius: 3px;
     width: 50%;
-    background: var(--blue);
+    background: var(--primary-color);
 }
 
 
@@ -202,7 +202,7 @@
     display: flex;
     align-items: flex-end;
     text-align: center;
-    color: var(--blue);
+    color: var(--primary-color);
     width: 40%;
     padding: 2rem 3rem 0 0;
 }

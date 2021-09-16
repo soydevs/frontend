@@ -67,7 +67,7 @@ function UpcomingEvents() {
     const DialogContent = withStyles((theme) => ({
         root: {
             padding: theme.spacing(2),
-            background: '#F3F5F7;',
+            background: '#F3F5F7',
             boxShadow: '-3px 3px 6px rgba(49, 160, 222, 0.2)',
         },
     }))(MuiDialogContent);
