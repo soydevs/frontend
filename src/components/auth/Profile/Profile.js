@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useState, useEffect, useContext } from 'react'
-
+import { useHistory } from 'react-router-dom'
 import { HiPencil, HiOutlineUserCircle, HiOutlineCake, HiOutlinePhone, HiOutlineMail, HiOutlineLocationMarker } from "react-icons/hi";
 import './Profile.css'
 import { AuthContext } from '../../../context/AuthContext'
@@ -14,7 +14,11 @@ function Profile() {
     const [birthdate, setBirthdate] = useState('')
 // eslint-disable-next-line
     const [user, setUser] = useState()
-    const { token } = useContext(AuthContext);
+    const { token, handleLogout } = useContext(AuthContext);
+
+
+    
+    const history = useHistory()
 
     const fetchData = async () => {
         const URL = process.env.REACT_APP_BASE_URL + '/users';
@@ -35,13 +39,21 @@ function Profile() {
         fetchData() // eslint-disable-next-line
     }, [])
 
+    
+    const logout = () => {
+        handleLogout()
+        history.push('/login')
+    }
+
 
     return (
         <div className="profile">
             <div className="profile__header">
+                <button onClick={logout} className="logout">Logout</button>
                 <div className="profile__header__info">
                     <div className="phi_img">
                         <img src="https://images.unsplash.com/photo-1569466896818-335b1bedfcce?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="" />
+                        <HiPencil className="edit_image"/>
                     </div>
                     <h1>{name}</h1>
                     <p>{email}</p>
@@ -88,6 +100,8 @@ function Profile() {
                     </div>
                     <HiPencil className="edit__profile"/>
                 </div>
+
+                <button className="profile__save">Save Changes</button>
             </div>
         </div>
     )

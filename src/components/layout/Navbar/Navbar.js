@@ -1,12 +1,11 @@
-import React, { useState, useContext } from 'react'
-import { Link, useHistory } from 'react-router-dom'
+import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 import { withStyles, makeStyles } from '@material-ui/core/styles';
 import Dialog from '@material-ui/core/Dialog';
 import MuiDialogContent from '@material-ui/core/DialogContent';
 import { IoIosClose } from "react-icons/io";
 import { GiHamburgerMenu } from "react-icons/gi";
 
-import { AuthContext } from '../../../context/AuthContext'
 import './Navbar.css'
 
 
@@ -14,9 +13,6 @@ import './Navbar.css'
 function Navbar() {
 
     const [open, setOpen] = useState(false);
-    const { handleLogout } = useContext(AuthContext);
-
-    const history = useHistory()
 
     const handleNavOpen = () => {
       setOpen(true);
@@ -25,10 +21,6 @@ function Navbar() {
       setOpen(false);
     };
 
-    const logout = () => {
-        handleLogout()
-        history.push('/login')
-    }
 
     const useStyles = makeStyles({
         topScrollPaper: {
@@ -80,7 +72,6 @@ function Navbar() {
                     <Link to="/signup">
                         <button className="navBtn nav_signup">Signup</button>
                     </Link>
-                    <button onClick={logout} className="navBtn nav_signup">Logout</button>
                 </div>
 
                 <div className="nav__mob">

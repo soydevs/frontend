@@ -12,7 +12,9 @@
     padding-right: 1rem;
     -ms-overflow-style: none;  
     scrollbar-width: none; 
+    padding: 0 2rem;
 }
+
 .placesPage__btn_container::-webkit-scrollbar {
     display: none;
 }
@@ -48,3 +50,16 @@
 }
 
 
+
+
+@media screen and (max-width: 992px) {
+    .placesPage__btn_container {
+        padding: 0 1rem;
+    }
+    
+}
+
+@media screen and (max-width: 800px) {
+
+    
+}

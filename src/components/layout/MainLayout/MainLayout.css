@@ -23,7 +23,7 @@
     width: 100%;
     padding: 2rem;
     margin: 2rem;
-    background: #F3F5F7;
+    background: #ECF3F8;
     border-radius: 20px;
     height: 90vh;
     overflow-y: scroll;
@@ -56,6 +56,7 @@
         padding-bottom: 80px;
         margin: 0;
         padding: 1rem;
+        border-radius: 0;
     }
 
     .main__layout__events {

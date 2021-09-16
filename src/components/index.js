@@ -16,4 +16,5 @@ export { default as PlacesNav } from './Places/PlacesNav/PlacesNav'
 export { default as PlaceAbout } from './Places/PlaceAbout/PlaceAbout'
 export { default as PlaceReview } from './Places/PlaceReview/PlaceReview'
 export { default as PlaceHotels } from './Places/PlaceHotels/PlaceHotels'
+export { default as Weather } from './Places/Weather/Weather'
 

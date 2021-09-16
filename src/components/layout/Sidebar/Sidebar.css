@@ -118,10 +118,14 @@
 .navActive {
     color: #FAFAFA;
     font-weight: 600;
-    background: #31A0DE;
+    background: var(--primary-color);
     border-radius: 20px;
 }
 
+.navActive:hover {
+    color: #FAFAFA;
+    background: var(--primary-color);
+}
 
 @media (min-width: 992px) and (max-width: 1380px) {
     .navIcon {

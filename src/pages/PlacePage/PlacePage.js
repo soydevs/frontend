@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
 import { useParams } from 'react-router'
-import { Layout, PlacesNav, PlaceAbout, PlaceReview, PlaceHotels } from '../../components'
+import { Layout, PlacesNav, PlaceAbout, PlaceReview, PlaceHotels, Weather } from '../../components'
 
 import './PlacePage.css'
 
 function PlacePage() {
 
-    const [tab, setTab] = useState(1)
+    const [tab, setTab] = useState(3)
 
     const query = useParams()
     const place = query.id
@@ -21,9 +21,23 @@ function PlacePage() {
                 <button onClick={() => setTab(4)} className={`${tab === 4 ? 'selected' : 'not_selected'}`}>Fun Facts</button>
             </div>
             <div className="placeTab__container">
-                <PlaceAbout />
-                <PlaceReview />
-                <PlaceHotels />
+                {tab === 1 && (
+                <>
+                    <PlaceAbout />
+                    <PlaceReview />
+                    <PlaceHotels />
+                </>
+                )}
+                {tab === 2 && (
+                    <h1>More Info</h1>
+                )}
+                {tab === 3 && (
+                    <Weather />
+                )}
+                {tab === 4 && (
+                    <h1>Fun facts</h1>
+                )}
+
             </div>
         </Layout>
     )
