@@ -3,36 +3,36 @@ import { BsCircleFill } from "react-icons/bs";
 
 import './PlaceReview.css'
 
-const reviews = [
-    {
-        id: 1,
-        image: 'https://avatars.githubusercontent.com/u/43471295?v=4',
-        name: 'Jason Bourne',
-        place: 'Kochi',
-        rating: 1,
-        reviewTitle: 'Excellent Spot',
-        reviewDesc: "I think it's a one of the most best in quality earphone introduced in market Because I have already use earphones like boat headbass100 One more and like sony.. senhensier",
-    },
-    {
-        id: 2,
-        image: 'https://avatars.githubusercontent.com/u/43471295?v=4',
-        name: 'Jason Bourne',
-        place: 'Kochi',
-        rating: 3,
-        reviewTitle: 'Excellent Spot',
-        reviewDesc: "I think it's a one of the most best in quality earphone introduced in market Because I have already use earphones like boat headbass100 One more and like sony. the most best in quality earphone introduced in market Because I have already use earphones like boat headbass100 One more and like sony. . senhensier",
-    },
-    {
-        id: 3,
-        image: 'https://avatars.githubusercontent.com/u/43471295?v=4',
-        name: 'Jason Bourne',
-        place: 'Kochi',
-        rating: 4,
-        reviewTitle: 'Excellent Spot',
-        reviewDesc: "I think it's a one of the most best in quality earphone introduced in market Because I have already use earphones like boat headbass100 One more and like sony.. senhensier",
-    },
+// const reviews = [
+//     {
+//         id: 1,
+//         image: 'https://avatars.githubusercontent.com/u/43471295?v=4',
+//         author: 'Jason Bourne',
+//         location: 'Kochi',
+//         rating: 1,
+//         title: 'Excellent Spot',
+//         text: "I think it's a one of the most best in quality earphone introduced in market Because I have already use earphones like boat headbass100 One more and like sony.. senhensier",
+//     },
+//     {
+//         id: 2,
+//         image: 'https://avatars.githubusercontent.com/u/43471295?v=4',
+//         author: 'Jason Bourne',
+//         location: 'Kochi',
+//         rating: 3,
+//         title: 'Excellent Spot',
+//         text: "I think it's a one of the most best in quality earphone introduced in market Because I have already use earphones like boat headbass100 One more and like sony. the most best in quality earphone introduced in market Because I have already use earphones like boat headbass100 One more and like sony. . senhensier",
+//     },
+//     {
+//         id: 3,
+//         image: 'https://avatars.githubusercontent.com/u/43471295?v=4',
+//         author: 'Jason Bourne',
+//         location: 'Kochi',
+//         rating: 4,
+//         title: 'Excellent Spot',
+//         text: "I think it's a one of the most best in quality earphone introduced in market Because I have already use earphones like boat headbass100 One more and like sony.. senhensier",
+//     },
 
-]
+// ]
 
 const displayRating = (n) => {
     return (
@@ -52,26 +52,26 @@ const displayRating = (n) => {
 }
 
 
-function PlaceReview() {
-
+function PlaceReview({reviews}) {
     return (
         <div className="placeReview">
             <h2>Reviews :</h2>
 
             <div className="reviews__container">
-                {reviews.map(rev => (
+                {reviews.length > 0 ? '': <p className="placeReview">No reviews yet!</p>}
+                {reviews && reviews.map(rev => (
                     <div className="reviewCard" key={rev.id}>
                         <div className="reviewCard__profile">
                             <img src={rev.image} alt="" />
                             <div className="reviewCard__profile__info">
-                                <h4>{rev.name}</h4>
-                                <p>{rev.place}</p>
+                                <h4>{rev.author}</h4>
+                                <p>{rev.location}</p>
                             </div>
                         </div>
                         {displayRating(rev.rating)}
                         <div className="reviewCard__content">
-                            <h3>{rev.reviewTitle}</h3>
-                            <p>{rev.reviewDesc}</p>
+                            <h3>{rev.title}</h3>
+                            <p>{rev.text}</p>
                         </div>
                     </div>
                 ))}

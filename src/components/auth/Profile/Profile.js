@@ -1,9 +1,9 @@
-import axios from 'axios';
 import React, { useState, useEffect, useContext } from 'react'
 import { useHistory } from 'react-router-dom'
 import { HiPencil, HiOutlineUserCircle, HiOutlineCake, HiOutlinePhone, HiOutlineMail, HiOutlineLocationMarker } from "react-icons/hi";
 import './Profile.css'
 import { AuthContext } from '../../../context/AuthContext'
+import requestHandler from '../../../hooks/requestHandler';
 
 function Profile() {
 
@@ -13,31 +13,51 @@ function Profile() {
     const [email, setEmail] = useState('')
     const [birthdate, setBirthdate] = useState('')
 // eslint-disable-next-line
-    const [user, setUser] = useState()
+    const [user, setUser] = useState(
+        {
+            name:'', phone:'', birthdate:'', location:'', email:''
+        }
+    )
     const { token, handleLogout } = useContext(AuthContext);
 
 
     
     const history = useHistory()
 
-    const fetchData = async () => {
-        const URL = process.env.REACT_APP_BASE_URL + '/users';
-        try {
-            const res = await axios.get(URL,  {headers: { 'Authorization': `Bearer ${token}` }})
-
-            setUser(res.data)
-            setName(res.data.name)
-            setPhone(res.data.phone)
-            setEmail(res.data.email)
-        } catch (error) {
-            console.log(error)
-        }
-    }
-
-
     useEffect(() => {
-        fetchData() // eslint-disable-next-line
+        requestHandler('GET','/users', undefined, token).then(response => {
+            if(response.success) {
+                setUser(response.data)
+                setBirthdate(response.data.birthdate ? response.data.birthdate : '')
+                setLocation(response.data.location ? response.data.location : '')
+                setName(response.data.name)
+                setPhone(response.data.phone)
+                setEmail(response.data.email)
+            }
+        }) // eslint-disable-next-line
     }, [])
+
+    const handleSave = () => {
+        const data = { name, email, birthdate, location, phone }
+        requestHandler('PATCH','/users', data , token).then(response => {
+            console.log(response.success)
+            if(response.success) {
+                console.log(response)
+                setUser(response.data.user)
+                setName(response.data.user.name)
+                setPhone(response.data.user.phone)
+                setEmail(response.data.user.email)
+                setLocation(response.data.user.location ? response.data.user.location : '')
+                setBirthdate(response.data.user.birthdate ? response.data.user.birthdate : '')
+            } else {
+                setName(user.name ? user.name : '')
+                setPhone(user.phone ? user.phone :'')
+                setEmail(user.email ? user.email :'')
+                setLocation(user.location ? user.location : '')
+                setBirthdate(user.birthdate ? user.birthdate : '')
+            }
+        }) 
+    }
 
     
     const logout = () => {
@@ -101,7 +121,7 @@ function Profile() {
                     <HiPencil className="edit__profile"/>
                 </div>
 
-                <button className="profile__save">Save Changes</button>
+                <button className="profile__save" onClick={handleSave}>Save Changes</button>
             </div>
         </div>
     )
