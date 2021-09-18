@@ -26,6 +26,7 @@ function AuthContextProvider(props) {
     const handleLogout = () => {
         localStorage.removeItem('soydevsUser')
         localStorage.removeItem('soydevsToken')
+        localStorage.removeItem('soydevsName')        
     }
 
 

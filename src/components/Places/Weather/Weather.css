@@ -127,7 +127,7 @@
 
 .upcoming {
     display: flex;
-    width: 60%;
+    width: 90%;
     padding: 0.2rem 1rem;
     font-family: var(--primary-font);
     color: var(--text-primary);  
@@ -138,11 +138,17 @@
 }
 
 .upcoming_date, .upcoming_type, .upcoming_temp {
-    width: 30%;
     display: flex;
     align-items: center;
     justify-content: flex-start;
     font-size: 1.05rem;
+}
+
+.upcoming_date {
+    width: 30%;
+}
+.upcoming_type {
+    width: 60%;
 }
 
 .upcoming_temp {

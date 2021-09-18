@@ -1,11 +1,11 @@
-import React, { useState , useContext } from 'react'
+import React, { useState , useContext, useEffect } from 'react'
 import { Link, useHistory } from 'react-router-dom'
-import axios from 'axios'
 import { BsEye, BsEyeSlash } from "react-icons/bs";
 
 import './SignUp.css'
 import { AuthContext } from '../../../context/AuthContext'
 import Globe from '../../UI/Globe/Globe';
+import requestHandler from '../../../hooks/requestHandler';
 
 function SignUp() {
 
@@ -16,6 +16,8 @@ function SignUp() {
 
     const [hidden, setHidden] = useState(true)
     const [errorMsg, setErrorMsg] = useState('')
+
+    var timeout;
 
     const history = useHistory()
 
@@ -32,30 +34,38 @@ function SignUp() {
 
     const handleSignUp = async (e) => {
         e.preventDefault()
-        const URL = process.env.REACT_APP_BASE_URL + '/auth/signup'
-        const data = {
-            username,
-            name,
-            phone,
-            password
-        }
         if(username && name && phone && password) {
-            try {
-                const res = await axios.post(URL, data)
-                history.push('/login')
-                console.log(res)
-            } catch (error) {
-                console.log(error)
-                setErrorMsg('Signin failed!')
-                setTimeout(() => { setErrorMsg('') }, 4000)
+            const data = {
+                username,
+                password,
+                name,
+                phone
             }
+            const response = await requestHandler('POST', '/auth/signup', data);
+            handleResponse(response);
         }
         else {
             setErrorMsg('Enter all the fields')
         }
     }
 
-    console.log(errorMsg)
+    const handleResponse = (response) => {
+        if(response.success) 
+            history.push('/login')
+        else {
+            setErrorMsg(response.message)
+            timeout = setTimeout(()=>{
+                setErrorMsg('')
+            }, 4000)
+        }
+    }
+
+    useEffect(()=>{
+        return ()=>{
+            clearTimeout(timeout)
+        }
+    })
+
 
     return (
         <div className="signUp">
@@ -66,6 +76,7 @@ function SignUp() {
                     </div>
                     <div className="lsc__left__form">
                         <form className="login__signup__form" onSubmit={handleSignUp}>
+                            <p>{errorMsg}</p>
                             <div className="ls_input_div">
                                 <label>Username</label>
                                 <input value={username} onChange={(e) => setUsername(e.target.value)} className="ls_input" type="text"/>

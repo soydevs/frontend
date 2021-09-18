@@ -1,13 +1,18 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { makeStyles } from '@material-ui/core/styles';
 import { WiDayCloudyGusts } from "react-icons/wi";
+import { useParams } from 'react-router-dom';
 
 import sunnyD from '../../../assets/svg/weather/sunnyD.svg'
 import sunnyM from '../../../assets/svg/weather/sunnyM.svg'
 
 import './Weather.css'
+import requestHandler from '../../../hooks/requestHandler';
 
 function Weather() {
+
+    const { place } = useParams();
+    const [weather, setWeather] = useState();
 
     const useStyles = makeStyles((t) => ({
         container: {
@@ -29,14 +34,27 @@ function Weather() {
 
     const classes = useStyles();
 
+    useEffect(()=>{
+        requestHandler('GET','/api/weather/' + place).then(response => {
+            if(response.success) {
+                setWeather(response.data.weatherData)
+            }
+            else {
+                console.log(response)
+                console.log("Weather data not available!")
+            }
+        })
+    },[place])
 
     return (
         <div className="weather">
+            { weather ?
+            (<>
             <div className={classes.container}>
                 <div className="weather__content">
-                    <p>11:30 am</p>
-                    <h1>37°C</h1>
-                    <h3>Sunny</h3>
+                    <p>{weather.currentWeather.lastUpdated}</p>
+                    <h1>{weather.currentWeather.celsius}°C</h1>
+                    <h3>{weather.currentWeather.weather}</h3>
                 </div>
             </div>
             <div className="weather__details">
@@ -45,21 +63,21 @@ function Weather() {
                     <div className="wdc">
                         <div className="weatherCard">
                             <p>Last Updated </p>
-                            <h2>11:00 am</h2>
+                            <h2>{weather.currentWeather.lastUpdated}</h2>
                         </div>
                         <div className="weatherCard">
                             <p>Today </p>
-                            <h2>Sept 16</h2>
+                            <h2>{new Date().toLocaleDateString()}</h2>
                         </div>
                     </div>
                     <div className="wdc">
                         <div className="weatherCard">
-                            <p>Min Temp.</p>
-                            <h2>27°C</h2>
+                            <p>Feels like</p>
+                            <h2>{weather.currentWeather.feelsLikeCelsius}°C</h2>
                         </div>
                         <div className="weatherCard">
-                            <p>Max Temp.</p>
-                            <h2>37°C</h2>
+                            <p>precipitation</p>
+                            <h2>{weather.currentWeather.precipitationMM} mm</h2>
                         </div>
                     </div>
                 </div>
@@ -67,32 +85,21 @@ function Weather() {
             <div className="weather__upcoming">
                 <h2>Upcoming</h2>
                 <div className="upcoming__container">
-                    <div className="upcoming">
-                        <h3 className="upcoming_date">Sept 17</h3>
+                   {weather.forecasts.map(f=>{
+                       return (
+                    <div key={f.date} className="upcoming">
+                        <h3 className="upcoming_date">{f.date}</h3>
                         <WiDayCloudyGusts className="upcoming_icon"/>
-                        <h3 className="upcoming_type">Cloudy</h3>
-                        <h4 className="upcoming_temp">27°C / 35°C</h4>
+                        <h3 className="upcoming_type">{f.weather.trim()}</h3>
+                        <h4 className="upcoming_temp">{f.minTempCelsius}°C / {f.maxTempCelsius}°C</h4>
                     </div>
-                    <div className="upcoming">
-                        <h3 className="upcoming_date">Sept 17</h3>
-                        <WiDayCloudyGusts className="upcoming_icon"/>
-                        <h3 className="upcoming_type">Cloudy</h3>
-                        <h4 className="upcoming_temp">27°C / 35°C</h4>
-                    </div>
-                    <div className="upcoming">
-                        <h3 className="upcoming_date">DEcember 17</h3>
-                        <WiDayCloudyGusts className="upcoming_icon"/>
-                        <h3 className="upcoming_type">Cloudy</h3>
-                        <h4 className="upcoming_temp">27°C / 35°C</h4>
-                    </div>
-                    <div className="upcoming">
-                        <h3 className="upcoming_date">Sept 17</h3>
-                        <WiDayCloudyGusts className="upcoming_icon"/>
-                        <h3 className="upcoming_type">Cloudy</h3>
-                        <h4 className="upcoming_temp">27°C / 35°C</h4>
-                    </div>
+                       )
+                   })}
+                    
                 </div>
-            </div>
+            </div> 
+            </>): (<></>)
+        }
         </div>
     )
 }

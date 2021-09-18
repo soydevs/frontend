@@ -1,60 +1,65 @@
-import React, { useState, useContext } from 'react'
-import { Link, useHistory } from 'react-router-dom'
-import axios from 'axios'
+import React, { useState, useContext, useEffect } from 'react';
+import { Link, useHistory } from 'react-router-dom';
 
 import { BsEye, BsEyeSlash } from "react-icons/bs";
 import { AuthContext } from '../../../context/AuthContext'
 import './Login.css'
 import Globe from '../../UI/Globe/Globe';
+import requestHandler from '../../../hooks/requestHandler';
 
 
 function Login() {
     const [errorMsg, setErrorMsg] = useState('')
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
-
+    var timeout;
     const [hidden, setHidden] = useState(true)
 
     const { handleUser, handleToken, handleName } = useContext(AuthContext);
+
     const history = useHistory()
 
     const togglePassView = () => {
         setHidden(!hidden)
     }
 
-    const handleSignUp = async (e) => {
+    const handleLogin = async (e) => {
         e.preventDefault()
-        const URL = process.env.REACT_APP_BASE_URL + '/auth/login';
-        const data = {
-            username,
-            password
-        }
         if(username && password) {
-            setErrorMsg('')
-            try {
-                const res = await axios.post(URL, data)
-                if(res.data.success) {
-                    handleToken(res.data.token)
-                    handleUser(res.data.user)
-                    handleName(res.data.user.name)
-                    console.log(res)
-                    history.push('/home')
-                } else {
-                    setErrorMsg('Invalid credentials')
-                }
-            } catch (error) {
-                console.log(error)
-                setErrorMsg('Signin failed!')
-                setTimeout(() => { setErrorMsg('') }, 4000)
-            }
+            let data;
+            let phone = /^\d+$/.test(username);
+
+            if(phone)   data = { 'phone':username, password } 
+            else data = { username, password }
+
+            const response = await requestHandler('POST', '/auth/login', data);
+            handleResponse(response);
         }
         else {
             setErrorMsg('Enter all the fields')
         }
     }
 
-    console.log(errorMsg)
+    const handleResponse = (response) => {
+        if(response.success) {
+            handleUser(response.data.user)
+            handleToken(response.data.token)
+            handleName(response.data.user.name)
+            history.push('/home')
+        }
+        else {
+            setErrorMsg(response.message)
+            timeout = setTimeout(()=>{
+                setErrorMsg('')
+            }, 4000)
+        }
+    }
 
+    useEffect(()=>{
+        return ()=>{
+            clearTimeout(timeout)
+        }
+    })
 
     return (
         <div className="login">
@@ -64,13 +69,14 @@ function Login() {
                         <h1>Login</h1>
                     </div>
                     <div className="lsc__left__form login__transform">
-                        <form className="login__signup__form" onSubmit={handleSignUp}>
+                        <form className="login__signup__form" onSubmit={handleLogin}>
+                            <p>{errorMsg}</p>
                             <div className="ls_input_div">
-                                <label>Username</label>
+                                <label>username / phone</label>
                                 <input value={username} onChange={(e) => setUsername(e.target.value)} className="ls_input" type="text"/>
                             </div>
                             <div className="ls_input_div">
-                                <label>Password</label>
+                                <label>password</label>
                                 <input value={password} onChange={(e) => setPassword(e.target.value)} className="ls_input" type={hidden ? 'password' : 'text'}/>
                                 {hidden ? (
                                     <BsEyeSlash onClick={togglePassView} className="pass-icon"/>
