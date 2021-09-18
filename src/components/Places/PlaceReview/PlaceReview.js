@@ -3,36 +3,36 @@ import { BsCircleFill } from "react-icons/bs";
 
 import './PlaceReview.css'
 
-const reviews = [
-    {
-        id: 1,
-        image: 'https://avatars.githubusercontent.com/u/43471295?v=4',
-        author: 'Jason Bourne',
-        location: 'Kochi',
-        rating: 1,
-        title: 'Excellent Spot',
-        text: "I think it's a one of the most best in quality earphone introduced in market Because I have already use earphones like boat headbass100 One more and like sony.. senhensier",
-    },
-    {
-        id: 2,
-        image: 'https://avatars.githubusercontent.com/u/43471295?v=4',
-        author: 'Jason Bourne',
-        location: 'Kochi',
-        rating: 3,
-        title: 'Excellent Spot',
-        text: "I think it's a one of the most best in quality earphone introduced in market Because I have already use earphones like boat headbass100 One more and like sony. the most best in quality earphone introduced in market Because I have already use earphones like boat headbass100 One more and like sony. . senhensier",
-    },
-    {
-        id: 3,
-        image: 'https://avatars.githubusercontent.com/u/43471295?v=4',
-        author: 'Jason Bourne',
-        location: 'Kochi',
-        rating: 4,
-        title: 'Excellent Spot',
-        text: "I think it's a one of the most best in quality earphone introduced in market Because I have already use earphones like boat headbass100 One more and like sony.. senhensier",
-    },
+// const reviews = [
+//     {
+//         id: 1,
+//         image: 'https://avatars.githubusercontent.com/u/43471295?v=4',
+//         author: 'Jason Bourne',
+//         location: 'Kochi',
+//         rating: 1,
+//         title: 'Excellent Spot',
+//         text: "I think it's a one of the most best in quality earphone introduced in market Because I have already use earphones like boat headbass100 One more and like sony.. senhensier",
+//     },
+//     {
+//         id: 2,
+//         image: 'https://avatars.githubusercontent.com/u/43471295?v=4',
+//         author: 'Jason Bourne',
+//         location: 'Kochi',
+//         rating: 3,
+//         title: 'Excellent Spot',
+//         text: "I think it's a one of the most best in quality earphone introduced in market Because I have already use earphones like boat headbass100 One more and like sony. the most best in quality earphone introduced in market Because I have already use earphones like boat headbass100 One more and like sony. . senhensier",
+//     },
+//     {
+//         id: 3,
+//         image: 'https://avatars.githubusercontent.com/u/43471295?v=4',
+//         author: 'Jason Bourne',
+//         location: 'Kochi',
+//         rating: 4,
+//         title: 'Excellent Spot',
+//         text: "I think it's a one of the most best in quality earphone introduced in market Because I have already use earphones like boat headbass100 One more and like sony.. senhensier",
+//     },
 
-]
+// ]
 
 const displayRating = (n) => {
     return (
