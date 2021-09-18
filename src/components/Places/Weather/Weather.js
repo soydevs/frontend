@@ -98,7 +98,7 @@ function Weather() {
                     
                 </div>
             </div> 
-            </>): (<></>)
+            </>): (<>Weather data not available!</>)
         }
         </div>
     )

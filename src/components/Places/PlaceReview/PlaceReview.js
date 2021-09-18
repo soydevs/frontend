@@ -53,7 +53,6 @@ const displayRating = (n) => {
 
 
 function PlaceReview({reviews}) {
-console.log(reviews)
     return (
         <div className="placeReview">
             <h2>Reviews :</h2>

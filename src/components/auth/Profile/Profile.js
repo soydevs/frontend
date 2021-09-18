@@ -13,7 +13,11 @@ function Profile() {
     const [email, setEmail] = useState('')
     const [birthdate, setBirthdate] = useState('')
 // eslint-disable-next-line
-    const [user, setUser] = useState({})
+    const [user, setUser] = useState(
+        {
+            name:'', phone:'', birthdate:'', location:'', email:''
+        }
+    )
     const { token, handleLogout } = useContext(AuthContext);
 
 
@@ -46,11 +50,11 @@ function Profile() {
                 setLocation(response.data.user.location ? response.data.user.location : '')
                 setBirthdate(response.data.user.birthdate ? response.data.user.birthdate : '')
             } else {
-                setName(response.data.user.name)
-                setPhone(response.data.user.phone)
-                setEmail(response.data.user.email)
-                setLocation(response.data.user.location ? response.data.user.location : '')
-                setBirthdate(response.data.user.birthdate ? response.data.user.birthdate : '')
+                setName(user.name ? user.name : '')
+                setPhone(user.phone ? user.phone :'')
+                setEmail(user.email ? user.email :'')
+                setLocation(user.location ? user.location : '')
+                setBirthdate(user.birthdate ? user.birthdate : '')
             }
         }) 
     }
