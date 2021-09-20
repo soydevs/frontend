@@ -6,6 +6,8 @@ import { useParams } from 'react-router-dom';
 import sunnyD from '../../../assets/svg/weather/sunnyD.svg'
 import sunnyM from '../../../assets/svg/weather/sunnyM.svg'
 
+import upcoming from '../../../assets/svg/weather/upcoming.svg'
+
 import './Weather.css'
 import requestHandler from '../../../hooks/requestHandler';
 
@@ -46,6 +48,17 @@ function Weather() {
         })
     },[place])
 
+
+
+    const displayDate = (d) => {
+        const date = new Date(d)
+        var options = { month: 'long'};
+        var monthName = new Intl.DateTimeFormat('en-US', options).format(date)
+        var day = date.getDate()
+        
+        return `${monthName.slice(0,3)} ${day}`
+    }
+
     return (
         <div className="weather">
             { weather ?
@@ -76,7 +89,7 @@ function Weather() {
                             <h2>{weather.currentWeather.feelsLikeCelsius}°C</h2>
                         </div>
                         <div className="weatherCard">
-                            <p>precipitation</p>
+                            <p>Precipitation</p>
                             <h2>{weather.currentWeather.precipitationMM} mm</h2>
                         </div>
                     </div>
@@ -85,10 +98,11 @@ function Weather() {
             <div className="weather__upcoming">
                 <h2>Upcoming</h2>
                 <div className="upcoming__container">
+                    <img src={upcoming} className="upcoming_img" alt=''/>
                    {weather.forecasts.map(f=>{
                        return (
                     <div key={f.date} className="upcoming">
-                        <h3 className="upcoming_date">{f.date}</h3>
+                        <h3 className="upcoming_date">{displayDate(f.date)}</h3>
                         <WiDayCloudyGusts className="upcoming_icon"/>
                         <h3 className="upcoming_type">{f.weather.trim()}</h3>
                         <h4 className="upcoming_temp">{f.minTempCelsius}°C / {f.maxTempCelsius}°C</h4>

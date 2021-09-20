@@ -7,7 +7,7 @@ import './PlacePage.css'
 
 function PlacePage() {
 
-    const [tab, setTab] = useState(3)
+    const [tab, setTab] = useState(0)
 
     const { place } = useParams()
 
@@ -52,9 +52,10 @@ function PlacePage() {
                 </>
                 )}
                 {tab === 2 && (
-                    info && info.imageCaption.map(i=>{
-                        return(<h3 key={i}>{i}</h3>);
-                    })
+                    // info && info.imageCaption.map(i=>{
+                    //     return(<h3 key={i}>{i}</h3>);
+                    // })
+                    <h1></h1>                                   
                 )}
                 {tab === 3 && (
                     <Weather />
