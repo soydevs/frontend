@@ -1,0 +1,185 @@
+.connectProfile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.connectProfile__header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    padding: 2rem 0;
+}
+
+
+.connectProfile__header__info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--primary-font);
+    font-style: normal;
+}
+
+.connectProfile__header__info h1 {
+    color: var(--primary-color);
+    font-weight: bold;
+    font-size: 3rem;
+    text-align: center;
+    line-height: 90%;
+    margin-top: 0.5rem;
+}
+.connectProfile__header__info p {
+    font-weight: 600;
+    font-size: 1.12rem;
+    text-align: center;
+    color: rgba(63, 63, 63, 0.7);
+}
+
+.phi_img {
+    position: relative;
+}
+
+.phi_img img {
+    width: 212px;
+    height: 212px;
+    border-radius: 50%;
+}
+
+
+.connectProfile__body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 55%;
+    padding: 2rem;
+}
+
+.profile_body_details {
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    padding: 0.5rem;
+    width: 100%;
+    gap: 1rem;
+}
+
+.profile_body_details label {
+    width: 20%;
+    font-family: var(--primary-font);
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 30px;
+    color: var(--text-primary);
+}
+
+.profile_input_container {
+    width: 75%;
+    position: relative;
+}
+
+
+.connectProfile_input {
+    outline: none;
+    height: 40px;
+    width: 100%;
+    padding: 0.5rem;
+    padding-left: 0.8rem;
+    border: 3px solid #84CAF2;
+    box-sizing: border-box;
+    border-radius: 7px;
+    font-family: var(--primary-font);
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    color: rgba(85, 85, 85, 0.7);
+    resize: none;
+}
+
+
+
+
+
+@media (min-width: 992px) and (max-width: 1380px) {
+
+}
+
+
+@media screen and (max-width: 992px) {
+
+    .phi_img img {
+        width:182px;
+        height: 182px;
+        border-radius: 50%;
+    }
+    .connectProfile__body {
+        width: 80%;
+        margin-top: 3rem;
+    }
+    .connectProfile__header {
+        border-radius: 0 0 30% 30%;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .connectProfile__body {
+        width: 100%;
+        margin-top: 2rem;
+        padding: 1rem;
+    }
+    .connectProfile__header__info {
+        margin-top: 2.5rem;
+    }
+
+    .connectProfile__header__info h1 {
+        font-size: 2.15rem;
+    }
+    .connectProfile__header__info p {
+        font-size: 0.85rem;
+    }
+
+    .profile_body_details {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        padding: 0.5rem;
+        width: 100%;
+        gap: 0.1rem;
+    }
+
+    .profile_input_container {
+        width: 100%;
+        position: relative;
+    }
+
+}
+
+@media screen and (max-width: 600px) {
+    .connectProfile__header__info h1 {
+        font-size: 1.95rem;
+    }
+    .connectProfile__header__info p {
+        font-size: 0.9rem;
+    }
+}
+
+@media screen and (max-width: 400px) {
+
+}
+  
+@media only screen and (min-device-width: 320px) and (max-device-width: 
+  480px) and (-webkit-device-pixel-ratio: 2) and (device-aspect-ratio: 2/3) {
+
+}
+
+
+@media only screen and (device-width: 768px) {
+
+}

@@ -7,11 +7,11 @@ import './PlacePage.css'
 
 function PlacePage() {
 
-    const [tab, setTab] = useState(0)
+    const [tab, setTab] = useState(1)
 
     const { place } = useParams()
 
-    const [intro, setIntro] = useState('No info available!')
+    const [intro, setIntro] = useState('No info available!') // eslint-disable-next-line
     const [info, setInfo] = useState('No info available!')
     const [table, setTable] = useState('No info available!')
     const [reviews, setReviews] = useState([])
@@ -55,7 +55,7 @@ function PlacePage() {
                     // info && info.imageCaption.map(i=>{
                     //     return(<h3 key={i}>{i}</h3>);
                     // })
-                    <h1></h1>                                   
+                    <h1>info</h1>                                   
                 )}
                 {tab === 3 && (
                     <Weather />
