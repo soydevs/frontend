@@ -20,9 +20,9 @@ function Sidebar() {
                 <FiHome className="navIcon"/>
                 <p>Home</p>
             </NavLink>
-            <NavLink to='/about' className='nav--item' activeClassName="navActive">
+            <NavLink to='/plan' className='nav--item' activeClassName="navActive">
                 <FiHome className="navIcon"/>
-                <p>About</p>
+                <p>Plan</p>
             </NavLink>
             <NavLink to='/connect' className='nav--item' activeClassName="navActive">
                 <FiHome className="navIcon"/>

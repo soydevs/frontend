@@ -4,8 +4,8 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { ThemeContext } from './context/ThemeContext';
 import './App.css';
 import PrivateRoute from './utils/PrivateRoute'
-import { Login, SignUp } from './components';
-import { FourNotFour, HomePage, ProfilePage, LandingPage, PlacePage } from './pages'
+import { Login, SignUp, TouristLogin, TouristSignup } from './components';
+import { FourNotFour, HomePage, ProfilePage, LandingPage, PlacePage, PlanPage, ConnectPage, ConnectProfilePage } from './pages'
 
 function App() {
 
@@ -19,8 +19,16 @@ function App() {
             <Route path='/signup' component={SignUp} exact/>
             <Route path='/' component={LandingPage} exact/>
             <PrivateRoute path='/home' component={HomePage} exact/>
+            <PrivateRoute path='/plan' component={PlanPage} exact/>
+            <PrivateRoute path='/connect' component={ConnectPage} exact/>
+            <PrivateRoute path='/connect/:id' component={ConnectProfilePage} exact/>
             <PrivateRoute path='/places/:place' component={PlacePage} exact/>
             <PrivateRoute path='/profile' exact component={ProfilePage}/>
+
+            <Route path='/service/login' component={TouristLogin} exact/>
+            <Route path='/service/signup' component={TouristSignup} exact/>
+
+
             <Route component={FourNotFour} />
           </Switch>
         </Router>
