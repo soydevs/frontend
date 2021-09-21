@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react'
 import Slider from "react-slick";
 
-import {  FcPrevious, FcNext } from "react-icons/fc";
+import { IoArrowBack, IoArrowForward } from "react-icons/io5";
 
 import './PlanSlider.css'
 
@@ -56,10 +56,10 @@ function PlanSlider() {
                 </div>
                 <div className="resumeSlider_Buttons" style={{justifyContent: slide === 1 ? 'flex-end' : 'space-between'}} >
                     <button onClick={gotoPrev} style={{display: slide === 1 ? 'none' : 'inline-block'}}>
-                        <FcPrevious className="prevButton"/>
+                        <IoArrowBack className="prevButton"/>
                     </button>
                     <button onClick={gotoNext} style={{display: slide === 4 ? 'none' : 'inline-block'}}>
-                        <FcNext className="nextButton" />
+                        <IoArrowForward className="nextButton" />
                     </button>
                 </div>
             </div>
