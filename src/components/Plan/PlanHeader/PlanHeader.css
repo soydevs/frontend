@@ -1,0 +1,13 @@
+.planHeader {
+    width: 100%;
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.planHeader img {
+    object-fit: contain;
+    width: 45%;
+    pointer-events: none;
+}

@@ -24,3 +24,6 @@ export { default as Weather } from './Places/Weather/Weather'
 export { default as Connect } from './Connect/Connect'
 export { default as ConnectProfile } from './Connect/ConnectProfile/ConnectProfile'
 
+export { default as PlanHeader } from './Plan/PlanHeader/PlanHeader'
+export { default as PlanSlider } from './Plan/PlanSlider/PlanSlider'
+
