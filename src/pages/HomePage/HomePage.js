@@ -22,7 +22,7 @@ function HomePage() {
                 <div className="homePage__header">
                     <div className="homePage__headerText">
                         <p>Hello, {shortname(name)}!</p>
-                        <h1><span className="blue__span">Where</span> do you want to go ?</h1>
+                        <h1><span className="primary__span">Where</span> do you want to go ?</h1>
                     </div>
                     <form className="homePage__headerSearch">
                         <input type="text" placeholder="Search for a place ...." className="home__search"/>

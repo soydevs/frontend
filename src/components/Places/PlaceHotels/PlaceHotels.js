@@ -64,7 +64,7 @@ const displayRating = (n) => {
 function PlaceHotels() {
     return (
         <div className="placeHotels">
-            <h1><span className="blue__span">Hotels</span> near here</h1>
+            <h1><span className="primary__span">Hotels</span> near here</h1>
 
             <div className="placeHotels__container">
                 {hotels.map(htl => (

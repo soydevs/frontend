@@ -6,7 +6,7 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    background: #FAFAFA;
+    background: var(--white);
     width: 20%;
     height: 100vh;
     z-index: 999;

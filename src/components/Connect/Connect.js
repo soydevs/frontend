@@ -50,7 +50,7 @@ function Connect() {
                 <img src={connect} alt="" />
             </div>
             <div className="connect_container">
-                <h1><span className="blue__span">Connect</span> to Local Users</h1>
+                <h1><span className="primary__span">Connect</span> to Local Users</h1>
                 <div className="users__container">
                     {users.map(user => (
                         <Link to={`/connect/${user.id}`} className="userCard" key={user.id}>
