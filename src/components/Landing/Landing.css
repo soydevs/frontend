@@ -1,6 +1,6 @@
 .landing {
     min-height: calc(100vh - 90px);
-    background-color: #FAFAFA;
+    background-color: var(--white);
     padding: 0;
     display: flex;
     flex-direction: column;

@@ -6,7 +6,7 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    background: #FAFAFA;
+    background: var(--white);
     width: 20%;
     height: 100vh;
     z-index: 999;
@@ -116,14 +116,14 @@
 }
 
 .navActive {
-    color: #FAFAFA;
+    color: var(--white);
     font-weight: 600;
     background: var(--primary-color);
     border-radius: 20px;
 }
 
 .navActive:hover {
-    color: #FAFAFA;
+    color: var(--white);
     background: var(--primary-color);
 }
 

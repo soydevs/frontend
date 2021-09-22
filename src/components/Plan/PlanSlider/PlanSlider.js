@@ -2,9 +2,15 @@ import React, { useRef, useState } from 'react'
 import Slider from "react-slick";
 
 import { IoArrowBack, IoArrowForward } from "react-icons/io5";
+import { MdDone } from "react-icons/md";
 
 import './PlanSlider.css'
 import SlideOne from '../Slides/SlideOne/SlideOne';
+import SlideTwo from '../Slides/SlideTwo/SlideTwo';
+import SlideThree from '../Slides/SlideThree/SlideThree';
+import SlideFour from '../Slides/SlideFour/SlideFour';
+
+
 
 function PlanSlider() {
     const [slide, setSlide] = useState(1)
@@ -36,22 +42,27 @@ function PlanSlider() {
         setSlide(slide - 1);
     }
 
+    const resetPlanner = () => {
+        setSlide(1);
+        sliderRef.current.slickGoTo(0);
+    }
+
     return (
         <div className="planSlider">
             <div className="planSlider__container">
-                <div className="planSlider">
+                <div className="planSliderDiv">
                     <Slider {...settings} ref={sliderRef}>
                         <div>
                             <SlideOne />
                         </div>
                         <div>
-                            <h1>Slide 2</h1>
+                            <SlideTwo />
                         </div>
                         <div>
-                            <h1>Slide 3</h1>
+                            <SlideThree />
                         </div>
                         <div>
-                            <h1>Slide 4</h1>
+                            <SlideFour />
                         </div>
                     </Slider>
                 </div>
@@ -61,6 +72,9 @@ function PlanSlider() {
                     </button>
                     <button onClick={gotoNext} style={{display: slide === 4 ? 'none' : 'inline-block'}}>
                         <IoArrowForward className="nextButton" />
+                    </button>
+                    <button onClick={resetPlanner} style={{display: slide === 4 ? 'inline-block' : 'none'}}>
+                        <MdDone className="nextButton" />
                     </button>
                 </div>
             </div>
