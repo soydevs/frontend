@@ -1,0 +1,21 @@
+.slides {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.slide__content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.slide__header {
+    font-family: var(--primary-font);
+    font-style: normal;
+    font-weight: bold;
+    font-size: 1.65rem;
+    color: var(--text-primary);
+}

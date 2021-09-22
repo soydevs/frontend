@@ -10,12 +10,12 @@
 }
 
 [data-theme="light"]{
-  --primary-color: #31A0DE;
+  --primary-color: #F6503B;
   --primary-bg: #F3F5F7;
   --text-primary: #555555;
   --bg: #ECF4F8;
   --bg-invert: #2F2F2F;
-  --input-shadow: inset 3px 3px 6px rgba(255, 255, 255, 0.85), inset -3px -3px 6px rgba(0, 0, 0, 0.2);
+  --input-shadow: inset 3px 3px 6px rgba(77, 60, 60, 0.85), inset -3px -3px 6px rgba(0, 0, 0, 0.2);
 }
 
 [data-theme="dark"]{

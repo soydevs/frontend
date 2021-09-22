@@ -36,7 +36,7 @@
     width: 100%;
 }
 
-.resumeSlider_Buttons {
+.slider_Buttons {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -44,7 +44,7 @@
     padding: 1rem;
 }
 
-.resumeSlider_Buttons > button {
+.slider_Buttons > button {
     font-size: 18px;
     box-sizing: border-box;
     width: 45px;
@@ -52,7 +52,7 @@
     border-radius: 50%;
     outline: none;
     border: none;
-    background: #31A0DE;
+    background: var(--primary-color);
     cursor: pointer;
 }
 

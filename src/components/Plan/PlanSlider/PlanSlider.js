@@ -4,6 +4,7 @@ import Slider from "react-slick";
 import { IoArrowBack, IoArrowForward } from "react-icons/io5";
 
 import './PlanSlider.css'
+import SlideOne from '../Slides/SlideOne/SlideOne';
 
 function PlanSlider() {
     const [slide, setSlide] = useState(1)
@@ -41,7 +42,7 @@ function PlanSlider() {
                 <div className="planSlider">
                     <Slider {...settings} ref={sliderRef}>
                         <div>
-                            <h1>Slide 1</h1>
+                            <SlideOne />
                         </div>
                         <div>
                             <h1>Slide 2</h1>
@@ -54,7 +55,7 @@ function PlanSlider() {
                         </div>
                     </Slider>
                 </div>
-                <div className="resumeSlider_Buttons" style={{justifyContent: slide === 1 ? 'flex-end' : 'space-between'}} >
+                <div className="slider_Buttons" style={{justifyContent: slide === 1 ? 'flex-end' : 'space-between'}} >
                     <button onClick={gotoPrev} style={{display: slide === 1 ? 'none' : 'inline-block'}}>
                         <IoArrowBack className="prevButton"/>
                     </button>
