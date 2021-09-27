@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import connect from '../../assets/svg/connect.svg'
+import connectUser   from '../../assets/svg/connectUser.svg'
+import connectGuide   from '../../assets/svg/connectGuide.svg'
 
 import './Connect.css'
 
@@ -44,13 +45,23 @@ const users = [
 ]
 
 function Connect() {
+
+    const [tab, setTab] = useState(1)
+
     return (
         <div className="connect">
             <div className="connectImg">
-                <img src={connect} alt="" />
+                <img src={tab === 1 ? connectGuide : connectUser} alt="" />
+            </div>
+            <div className="connectBtns__container">
+                <button onClick={() => setTab(1)} className={`${tab === 1 ? 'selected' : 'not_selected'}`}>Guide</button>
+                <button onClick={() => setTab(2)} className={`${tab === 2 ? 'selected' : 'not_selected'}`}>User</button>
             </div>
             <div className="connect_container">
-                <h1><span className="primary__span">Connect</span> to Local Users</h1>
+                <h1>
+                    <span className="primary__span">Connect</span> to 
+                    {`${tab === 1 ? ' Guides' : ' Local Users'}`}
+                </h1>
                 <div className="users__container">
                     {users.map(user => (
                         <Link to={`/connect/${user.id}`} className="userCard" key={user.id}>

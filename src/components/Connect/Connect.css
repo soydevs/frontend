@@ -3,6 +3,7 @@
     flex-direction: column;
     align-items: flex-start;
     padding: 1rem;
+    position: relative;
 }
 
 .connectImg {
@@ -14,7 +15,7 @@
 
 .connectImg img {
     object-fit: contain;
-    width: 55%;
+    height: 350px;
     pointer-events: none;
 }
 
@@ -75,4 +76,29 @@
     letter-spacing: 0.01em;
     color: var(--text-primary);
     margin-top: 0.85rem;
+}
+
+.connectBtns__container {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    padding: 0 2rem;
+    position: absolute;
+    right: 0;
+    top: 20px;
+}
+
+.connectBtns__container button {
+    cursor: pointer;
+    outline: none;
+    box-sizing: border-box;
+    border-radius: 40px;
+    width: 80px;
+    height: 34px;
+    font-family: var(--primary-font);
+    font-style: normal;
+    font-size: 14px;
+    white-space: nowrap;
+    flex-shrink: 0;
 }

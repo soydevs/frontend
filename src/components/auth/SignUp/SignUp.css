@@ -87,7 +87,6 @@
 }
 
 .ls_input {
-    background: var(--bg);
     box-shadow: var(--input-shadow);
     border-radius: 50px;
     border: none;
