@@ -1,12 +1,15 @@
-import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import React, { useContext, useEffect, useState } from 'react'
+import { Link, useHistory } from 'react-router-dom'
 import { BsEye, BsEyeSlash } from "react-icons/bs";
 
 import guide from '../../../../assets/svg/guide.svg'
-
+import requestHandler from '../../../../hooks/requestHandler';
 import './GuideSignup.css'
+import { AuthContext } from '../../../../context/AuthContext';
 
 function GuideSignup() {
+
+    const { handleUser, handleToken, handleName } = useContext(AuthContext);
 
     const [username, setUsername] = useState('')
     const [name, setName] = useState('')
@@ -16,6 +19,9 @@ function GuideSignup() {
 
     const [hidden, setHidden] = useState(true)
     const [errorMsg, setErrorMsg] = useState('')
+
+    const history = useHistory()
+    var timeout;
 
     const togglePassView = () => {
         setHidden(!hidden)
@@ -28,14 +34,37 @@ function GuideSignup() {
                 username,
                 password,
                 name,
-                phone
+                phone, 
+                location
             }
-            console.log(data)
+            const response = await requestHandler('POST', '/auth/guides/signup', data);
+            handleResponse(response);
         }
         else {
             setErrorMsg('Enter all the fields')
         }
     }
+    
+    const handleResponse = (response) => {
+        if(response.success) {
+            handleUser(response.data.guide)
+            handleToken(response.data.token)
+            handleName(response.data.guide.name)
+            history.push('/home')
+        }
+        else {
+            setErrorMsg(response.message)
+            timeout = setTimeout(()=>{
+                setErrorMsg('')
+            }, 4000)
+        }
+    }    
+
+    useEffect(()=>{
+        return ()=>{
+            clearTimeout(timeout)
+        }
+    })
 
     return (
         <div className="gSignUp">
