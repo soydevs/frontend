@@ -8,6 +8,7 @@ export { default as Profile } from './auth/Profile/Profile'
 
 export { default as TouristSignup } from './Tourists/auth/TouristSignup/TouristSignup'
 export { default as TouristLogin } from './Tourists/auth/TouristLogin/TouristLogin'
+export { default as EventReg } from './Tourists/EventReg/EventReg'
 
 export { default as Landing } from './Landing/Landing'
 export { default as UpcomingEvents } from './UpcomingEvents/UpcomingEvents'
