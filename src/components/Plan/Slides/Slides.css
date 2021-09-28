@@ -233,17 +233,42 @@
 
 
 @media screen and (max-width: 992px) {
-    
+    .slide__header {
+        font-size: 1.45rem;
+        margin: 1rem 0;
+    }
 }
 
 @media screen and (max-width: 800px) {
-
+    .slide__header {
+        font-size: 1.25rem;
+        margin: 0.85rem 0;
+    }
+    .slide_visit_input {
+        width: 100%;
+    }
     
 }
 
 @media screen and (max-width: 600px) {
     
-    
+    .slider_btns_container {
+        display: flex;
+        gap: 2rem;
+    }
+    .slider_btns_action {
+        gap: 0;
+    }
+    .slider_btns_action h4 {
+        font-size: 0.75rem;
+        margin: 0 0.85rem;
+        width: 30px;
+        height: 30px;
+    }
+    .slider_addBtn, .slider_subtractBtn {
+        padding: 0.25rem;
+        font-size: 1.25rem;
+    }
 }
 
 @media screen and (max-width: 400px) {
