@@ -1,10 +1,12 @@
-import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import React, { useContext, useEffect, useState } from 'react'
+import { Link, useHistory } from 'react-router-dom'
 import { BsEye, BsEyeSlash } from "react-icons/bs";
 
 import authentication from '../../../../assets/svg/authentication.svg'
 
 import './TouristLogin.css'
+import requestHandler from '../../../../hooks/requestHandler';
+import { AuthContext } from '../../../../context/AuthContext';
 
 function TouristLogin() {
 // eslint-disable-next-line
@@ -14,15 +16,52 @@ function TouristLogin() {
     const [password, setPassword] = useState('')
     const [hidden, setHidden] = useState(true)
 
+    const { handleUser, handleToken, handleName } = useContext(AuthContext);
+    const history = useHistory()
+
+    var timeout;
 
     const togglePassView = () => {
         setHidden(!hidden)
     }
 
-    const handleLogin = (e) => {
+    const handleLogin = async (e) => {
         e.preventDefault()
+        if(username && password) {
+            let data;
+            let phone = /^\d+$/.test(username);
 
+            if(phone)   data = { 'phone':username, password } 
+            else data = { username, password }
+
+            const response = await requestHandler('POST', '/auth/services/login', data);
+            handleResponse(response);
+        }
+        else {
+            setErrorMsg('Enter all the fields')
+        }
     }
+
+    const handleResponse = (response) => {
+        if(response.success) {
+            handleUser(response.data.service)
+            handleToken(response.data.token)
+            handleName(response.data.service.name)
+            history.push('/home')
+        }
+        else {
+            setErrorMsg(response.message)
+            timeout = setTimeout(()=>{
+                setErrorMsg('')
+            }, 4000)
+        }
+    }
+
+    useEffect(()=>{
+        return ()=>{
+            clearTimeout(timeout)
+        }
+    })
 
 
     return (

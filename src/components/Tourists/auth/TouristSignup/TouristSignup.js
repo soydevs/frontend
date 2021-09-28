@@ -1,15 +1,20 @@
-import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import React, { useContext, useEffect, useState } from 'react'
+import { Link, useHistory } from 'react-router-dom'
 import { BsEye, BsEyeSlash } from "react-icons/bs";
 
 import authentication from '../../../../assets/svg/authentication.svg'
 
 import './TouristSignup.css'
+import requestHandler from '../../../../hooks/requestHandler';
+import { AuthContext } from '../../../../context/AuthContext';
 
 function TouristSignup() {
-// eslint-disable-next-line
-    const [errorMsg, setErrorMsg] = useState('')
 
+    const { handleUser, handleToken, handleName } = useContext(AuthContext);
+    
+    //eslint-disable-next-line
+    const [errorMsg, setErrorMsg] = useState('')
+    var timeout;
     const [shopName, setShopName] = useState('')
     const [name, setName] = useState('')
     const [username, setUsername] = useState('')
@@ -19,17 +24,56 @@ function TouristSignup() {
     const [phone, setPhone] = useState('')
     const [address, setAddress] = useState('')
     const [email, setEmail] = useState('')
-    const [pinCode, setPinCode] = useState('')
+    const [pincode, setpincode] = useState('')
+
+    const history = useHistory()
 
     const togglePassView = () => {
         setHidden(!hidden)
     }
 
     
-    const handleSignup = (e) => {
+    const handleSignup = async (e) => {
         e.preventDefault()
-
+        if(username && name && phone && address && email && pincode && shopName && password) {
+            const data = {
+                username,
+                password,
+                name,
+                phone, 
+                address,
+                email,
+                pincode,
+                shopName
+            }
+            const response = await requestHandler('POST', '/auth/services/signup', data);
+            handleResponse(response);
+        }
+        else {
+            setErrorMsg('Enter all the fields')
+        }
     }
+
+    const handleResponse = (response) => {
+        if(response.success) {
+            handleUser(response.data.service)
+            handleToken(response.data.token)
+            handleName(response.data.service.name)
+            history.push('/home')
+        }
+        else {
+            setErrorMsg(response.message)
+            timeout = setTimeout(()=>{
+                setErrorMsg('')
+            }, 4000)
+        }
+    }
+
+    useEffect(()=>{
+        return ()=>{
+            clearTimeout(timeout)
+        }
+    })
 
     return (
         <div className="touristSignup">
@@ -44,7 +88,7 @@ function TouristSignup() {
                     <h1>Sign Up</h1>
                     <form className="tourist_input_form" onSubmit={handleSignup}>
                         <div className="signin__inputContainer">
-                            <label>Shop name</label>
+                            <label>Service Name</label>
                             <input 
                                 placeholder="Hawaii tours" 
                                 type="text"
@@ -94,13 +138,13 @@ function TouristSignup() {
                             />
                         </div>
                         <div className="signin__inputContainer">
-                            <label>PINCODE</label>
+                            <label>Pincode</label>
                             <input 
                                 placeholder="PIN Code" 
                                 type="text"
                                 className="signin__input"
-                                value={pinCode}
-                                onChange={(e) => setPinCode(e.target.value.replace(/[^0-9]/g, ""))}
+                                value={pincode}
+                                onChange={(e) => setpincode(e.target.value.replace(/[^0-9]/g, ""))}
                             />
                         </div>
                         <div className="signin__inputContainer">
