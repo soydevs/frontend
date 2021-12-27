@@ -1,7 +1,6 @@
 import React, { useState , useContext, useEffect } from 'react'
 import { Link, useHistory } from 'react-router-dom'
 import { BsEye, BsEyeSlash } from "react-icons/bs";
-
 import './SignUp.css'
 import { AuthContext } from '../../../context/AuthContext'
 import Globe from '../../UI/Globe/Globe';

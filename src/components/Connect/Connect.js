@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import connectUser   from '../../assets/svg/connectUser.svg'
 import connectGuide   from '../../assets/svg/connectGuide.svg'
+import sampleUserImg from '../../assets/jpg/sample.jpg';
 
 import './Connect.css'
 
@@ -59,16 +60,20 @@ function Connect({place}) {
 
     useEffect(()=>{
         if(!location)   return;
-        Promise.all([requestHandler('GET','/api/guides/' + location)], requestHandler('GET', '/users/connect', undefined, token)).then((r1, r2) => {
-            if(r1.value.success) {
-                setGuides(r1.value.data.nearbyGuides)
+        Promise.all([
+            requestHandler('GET','/api/guides/' + location), 
+            requestHandler('GET', '/users/connect/' + location, undefined, token)]
+        )
+        .then((res) => {
+            if(res[0].success) {
+                setGuides(res[0].data.nearbyGuides)
             }
-            if(r2.value.success) {
-                setUsers(r2.value.data.nearbyUsers)
+        
+            if(res[1].success) {
+                console.log(res[1].data.nearbyUsers)
+                setUsers(res[1].data.nearbyUsers)
             }
             else {
-                console.log(r1.value)
-                console.log(r2.value)
                 console.log("Server down!")
             }
         }).catch(e=>{
@@ -114,16 +119,18 @@ function Connect({place}) {
                                 state:user
                             }
                         } className="userCard" key={user._id}>
-                            <img src={user.image} alt="" />
+                            <img src={sampleUserImg} alt="" />
                             <h3>{user.name}</h3>
                         </Link>
                     ))}
                 </div>
             </div>
-            </>):(<>
-            <input placeholder="Enter location" onChange={(e)=>{loc = e.target.value}} />
-            <button onClick={handleSearch}>Search</button>
-            </>)
+            </>):(
+            <div className='connect__div'>
+                <h1 className='connect__h1'>Where are you?</h1>
+                <input className='connect__input' placeholder="Enter location" onChange={(e)=>{loc = e.target.value}} />
+                <button className='connect__search__btn' onClick={handleSearch}>Search</button>
+            </div>)
             }
         </div>
     )

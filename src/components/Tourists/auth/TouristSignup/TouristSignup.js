@@ -79,7 +79,7 @@ function TouristSignup() {
         <div className="touristSignup">
             <div className="signin__left">
                 <div className="signin__leftContent">
-                    <h1>SoyDev</h1>
+                    <h1>Tourist'e<br/>Setu</h1>
                     <img src={authentication} alt="" />
                 </div>
             </div>
@@ -90,7 +90,7 @@ function TouristSignup() {
                         <div className="signin__inputContainer">
                             <label>Service Name</label>
                             <input 
-                                placeholder="Hawaii tours" 
+                                placeholder="Your Company" 
                                 type="text"
                                 className="signin__input"
                                 value={shopName}
@@ -100,7 +100,7 @@ function TouristSignup() {
                         <div className="signin__inputContainer">
                             <label>Name</label>
                             <input 
-                                placeholder="HRT" 
+                                placeholder="Your Name" 
                                 type="text"
                                 className="signin__input"
                                 value={name}
@@ -110,7 +110,7 @@ function TouristSignup() {
                         <div className="signin__inputContainer">
                             <label>Phone</label>
                             <input 
-                                placeholder="91923654789" 
+                                placeholder="Your Phone" 
                                 type="text"
                                 className="signin__input"
                                 value={phone}
@@ -120,7 +120,7 @@ function TouristSignup() {
                         <div className="signin__inputContainer">
                             <label>Email</label>
                             <input 
-                                placeholder="jason.bourne@gmail.com" 
+                                placeholder="Your email" 
                                 type="text"
                                 className="signin__input"
                                 value={email}
@@ -130,7 +130,7 @@ function TouristSignup() {
                         <div className="signin__inputContainer">
                             <label>Address</label>
                             <input 
-                                placeholder="here and there hahaha" 
+                                placeholder="Address of your company" 
                                 type="text"
                                 className="signin__input"
                                 value={address}
@@ -140,7 +140,7 @@ function TouristSignup() {
                         <div className="signin__inputContainer">
                             <label>Pincode</label>
                             <input 
-                                placeholder="PIN Code" 
+                                placeholder="Company pincode" 
                                 type="text"
                                 className="signin__input"
                                 value={pincode}
@@ -150,7 +150,7 @@ function TouristSignup() {
                         <div className="signin__inputContainer">
                             <label>Username</label>
                             <input 
-                                placeholder="hhhrrrttt" 
+                                placeholder="Your username" 
                                 type="text"
                                 className="signin__input"
                                 value={username}
@@ -161,6 +161,7 @@ function TouristSignup() {
                             <label>Password</label>
                             <input 
                                 type={hidden ? 'password' : 'text'}
+                                placeholder='Your password'
                                 className="signin__input"
                                 value={password}
                                 onChange={(e) => setPassword(e.target.value)}

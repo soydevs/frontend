@@ -79,7 +79,7 @@ function TouristLogin() {
                         <div className="signin__inputContainer">
                             <label>Username</label>
                             <input 
-                                placeholder="hhhrrrttt" 
+                                placeholder="username" 
                                 type="text"
                                 className="signin__input"
                                 value={username}
@@ -90,6 +90,7 @@ function TouristLogin() {
                             <label>Password</label>
                             <input 
                                 type={hidden ? 'password' : 'text'}
+                                placeholder='password'
                                 className="signin__input"
                                 value={password}
                                 onChange={(e) => setPassword(e.target.value)}

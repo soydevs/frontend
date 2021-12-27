@@ -121,7 +121,7 @@
 
 .tourist_auth_btn {
     display: flex;
-    flex-direction: column;
+    
     align-items: center;
     justify-content: center;
     margin-top: 2rem;
@@ -145,6 +145,7 @@
     background: var(--primary-color);
     color: var(--bg);
     border: none;
+    padding: 0 10px;
 }
 
 .login_btn {

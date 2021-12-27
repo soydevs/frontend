@@ -13,7 +13,7 @@ function Sidebar() {
   return (
     <div className='sidebar'>
         <div className="sidebar__header">
-            <h1>Logo</h1>
+            <h1>Tourist'e Setu</h1>
         </div>
         <div className='sidebar--container'>
             <NavLink to='/home' className='nav--item' activeClassName="navActive">

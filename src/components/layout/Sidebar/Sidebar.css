@@ -26,6 +26,7 @@
     font-weight: normal;
     font-size: 3.215rem;
     color: var(--primary-color);
+    text-align: center;
 }
 
 .sidebar--container {
