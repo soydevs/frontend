@@ -25,8 +25,9 @@ The application would have 3 views - users, services and guides
 │   ├───png
 │   │   └───trending
 │   └───svg
-│       ├───monuments
-│       └───weather  
+│   |   ├───monuments
+│   |   └───weather  
+|   └───jpg
 ├───components       
 │   ├───auth
 │   │   ├───Login
